@@ -1,15 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between navbar-padding">
-  <a class="navbar-brand" href="#">Aplicacion</a>
+  <a class="navbar-brand" [routerLink]="['']">Aplicacion</a>
   <!--Paginas del sitio-->
   <ul class="navbar-nav mr-auto" id="links">
     <li class="navbar-item">
-      <a class="navbar-link" href="#">Certificados</a>
+      <a class="navbar-link" [routerLink]="['/certificados']">Certificados</a>
     </li>
-    <li class="navbar-item" href="#">
-      <a class="navbar-link" href="#">Cursos</a>
+    <li class="navbar-item">
+      <a class="navbar-link" [routerLink]="['/cursos']">Cursos</a>
     </li>
-    <li class="navbar-item" href="#">
-      <a class="navbar-link" href="#">Bolsa</a>
+    <li class="navbar-item">
+      <a class="navbar-link" [routerLink]="['/bolsa']">Bolsa</a>
     </li>
   </ul>
   <div class="row" id="content-navbar" style="align-items: baseline;">
