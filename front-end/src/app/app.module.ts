@@ -5,10 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarScreenComponent } from './front-end/navbar/navbar-screen/navbar-screen.component';
+import { RegistrarseScreenComponent } from './front-end/registrarse/registrarse-screen/registrarse-screen.component';
+import { InicioScreenComponent } from './front-end/inicio/inicio-screen/inicio-screen.component';
+import { LoginScreenComponent } from './front-end/login/login-screen/login-screen.component';
+import { CursosScreenComponent } from './front-end/cursos/cursos-screen/cursos-screen.component';
+import { CursoindividualScreenComponent } from './front-end/cursoindividual/cursoindividual-screen/cursoindividual-screen.component';
+import { CertificadosScreenComponent } from './front-end/certificados/certificados-screen/certificados-screen.component';
+import { BolsaScreenComponent } from './front-end/bolsa/bolsa-screen/bolsa-screen.component';
+import { EmpleoScreenComponent } from './front-end/empleo/empleo-screen/empleo-screen.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarScreenComponent,
+    RegistrarseScreenComponent,
+    InicioScreenComponent,
+    LoginScreenComponent,
+    CursosScreenComponent,
+    CursoindividualScreenComponent,
+    CertificadosScreenComponent,
+    BolsaScreenComponent,
+    EmpleoScreenComponent
   ],
   imports: [
     BrowserModule,
