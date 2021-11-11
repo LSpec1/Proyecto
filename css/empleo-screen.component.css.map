@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../front-end/src/app/front-end/empleo/empleo-screen/empleo-screen.component.scss"
+    ],
+    "names": [],
+    "file": "empleo-screen.component.css"
+}

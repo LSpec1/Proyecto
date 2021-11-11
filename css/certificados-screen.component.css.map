@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../front-end/src/app/front-end/certificados/certificados-screen/certificados-screen.component.scss"
+    ],
+    "names": [],
+    "file": "certificados-screen.component.css"
+}

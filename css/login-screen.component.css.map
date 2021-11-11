@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../front-end/src/app/front-end/login/login-screen/login-screen.component.scss"
+    ],
+    "names": [],
+    "file": "login-screen.component.css"
+}

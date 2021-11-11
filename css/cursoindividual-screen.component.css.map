@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../front-end/src/app/front-end/cursoindividual/cursoindividual-screen/cursoindividual-screen.component.scss"
+    ],
+    "names": [],
+    "file": "cursoindividual-screen.component.css"
+}

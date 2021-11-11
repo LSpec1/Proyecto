@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../front-end/src/app/front-end/navbar/navbar-screen/navbar-screen.component.scss"
+    ],
+    "names": [],
+    "file": "navbar-screen.component.css"
+}

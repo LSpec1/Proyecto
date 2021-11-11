@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../front-end/src/app/front-end/bolsa/bolsa-screen/bolsa-screen.component.scss"
+    ],
+    "names": [],
+    "file": "bolsa-screen.component.css"
+}
