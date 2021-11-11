@@ -6,6 +6,12 @@
 a {@include link-common;}
 a:hover {color:white}
 
+ul#links {
+    font-size: medium;
+    border-right: 1px solid white;
+    margin-right: 2%;
+}
+
 #links li{
     margin-inline: 10px;
 }
