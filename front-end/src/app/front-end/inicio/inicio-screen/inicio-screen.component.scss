@@ -6,80 +6,8 @@
  *
 */
 
-/* Colores navbar */
-$primario: rgb(187, 187, 187);
-$secundario: rgb(30, 30, 35);
-
-// Cuerpo
-#seccion-cursos-titulo {
-    margin: 5%;
-    margin-left: 0;
-    font-size:xx-large;
-    margin-top: auto;
-}
 @media (min-width: 800px) {
     #container-cuerpo {
         margin: 50px;
-    }
-}
-
-//Secciones
-section#cursos-recientes {
-    border-bottom: 1px solid $secundario;
-}
-
-// Cartas
-/* Resolucion video */
-@media (min-width: 801px) {
-    #video-cursos-recientes {
-        width: 220px;
-        height: 170px;
-    }
-    .container-cuerpo {
-        margin-left: 4%
-    }
-}
-@media (max-width: 800px) {
-    #video-cursos-recientes {
-        width: 211px;
-        height: 180px;
-    }
-}
-
-//Ajuste de carta
-@media (max-width: 800px) {
-    #container-cartas {
-        display: inline-flex !important;
-    }
-}
-
-#container-cartas {
-    width: auto;
-    flex-wrap: wrap;
-    padding-left: 0;
-}
-#carta-titulo {
-    margin-bottom: 0;
-}
-#carta-texto {
-    margin-bottom: 0;
-}
-.carta-conf {
-    margin-right: 50px;
-    margin-bottom: 20px;
-}
-
-// Botones|
-#container-ver-mas {
-    text-align: center;
-}
-#boton-ver-mas {
-    color: $primario;
-    background-color: $secundario;
-}
-@media (min-width: 801px) {
-    #boton-ver-mas {
-        padding-inline: 80px;
-        font-size: 150%;
     }
 }

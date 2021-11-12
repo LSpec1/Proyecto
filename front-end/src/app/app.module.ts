@@ -14,6 +14,9 @@ import { CursoindividualScreenComponent } from './front-end/cursoindividual/curs
 import { CertificadosScreenComponent } from './front-end/certificados/certificados-screen/certificados-screen.component';
 import { BolsaScreenComponent } from './front-end/bolsa/bolsa-screen/bolsa-screen.component';
 import { EmpleoScreenComponent } from './front-end/empleo/empleo-screen/empleo-screen.component';
+import { CursosComponent } from './front-end/inicio/cursos/cursos.component';
+import { OfertasComponent } from './front-end/inicio/ofertas/ofertas.component';
+import { InfoComponent } from './front-end/inicio/info/info.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { EmpleoScreenComponent } from './front-end/empleo/empleo-screen/empleo-s
     CursoindividualScreenComponent,
     CertificadosScreenComponent,
     BolsaScreenComponent,
-    EmpleoScreenComponent
+    EmpleoScreenComponent,
+    CursosComponent,
+    OfertasComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
