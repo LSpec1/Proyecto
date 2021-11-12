@@ -1,14 +1,35 @@
-@mixin link-common{
-    color: rgb(187, 187, 187);
+/* Configuracion de colores navbar */
+$primario: rgb(187, 187, 187);
+$secundario: rgb(30, 30, 35);
+
+@mixin navbar-colors {
+    color: $primario;
+    background-color: $secundario;
+}
+
+/* Configuracion para los links */
+@mixin link-normal-conf{
+    color: $primario;
     text-decoration: none;
 }
 
-a {@include link-common;}
-a:hover {color:white}
+/* Clases */
+.navbar-colores {
+    @include navbar-colors;
+}
+
+a {@include link-normal-conf;}
+a:hover {color:$primario;}
+
+#logo {
+    width: 180px;
+    height: 80px;
+    object-fit: none;
+}
 
 ul#links {
     font-size: medium;
-    border-right: 1px solid white;
+    border-right: 1px solid $primario;
     margin-right: 2%;
 }
 
