@@ -1,0 +1,34 @@
+/* Medidas para las bandas laterales de colores en el cuerpo */
+@mixin medidas { padding-inline: 10%; }
+
+/* Colores de los bordes de la pagina */
+$secundario: rgb(201, 201, 201);
+$primario: rgb(250, 250, 250);
+$terciario: rgb(30, 30, 35);
+
+/* Clases colores */
+.bg-secundario { background-color: $secundario; }
+.bg-primario { background-color: $primario; }
+.text-secundario { color: $secundario; }
+.text-primario { color: $primario; }
+
+/* Cuerpo */
+.cuerpo-detras {
+    background-color: $secundario;
+    @include medidas;
+}
+
+.cuerpo-delante {
+    background-color: $primario;
+    @include medidas;
+}
+
+.text-terciario {
+    color: $terciario;
+}
+
+.bordeado {
+    border: gray solid 1px;
+    border-bottom: 0;
+    border-top: 0;
+}
