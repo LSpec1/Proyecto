@@ -1,0 +1,48 @@
+/* Colores */
+$primario: rgb(223, 223, 223);
+$secundario: rgb(30, 30, 35);
+
+
+
+// Cuerpo
+h1#ofertas-destacadas-titulo {
+    margin: 5%;
+    padding-top: 5%;
+    margin-left: 0;
+    font-size:xx-large;
+    margin-top: auto;
+}
+
+#contenedor-ofertas {
+    max-width: 680px;
+    margin-left: 0;
+}
+
+// Cartas
+#ofertas {
+    padding-top: 10px;
+    margin-bottom: 20px;
+    background-color: $primario;
+}
+
+@media (max-width: 800px) {
+    #ofertas {
+        width: min-content;
+    }
+}
+@media (min-width: 800px) {
+    .left-column {
+        max-width: 450px;
+    }
+}
+
+.right-column {
+    align-self: center;
+}
+
+#img-ofertas {
+    width: 180px;
+    height: 100px;
+    //object-fit: none;
+    clip-path: circle(60px at center);
+}

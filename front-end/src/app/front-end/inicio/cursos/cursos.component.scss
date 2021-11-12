@@ -7,7 +7,7 @@
 */
 
 /* Colores */
-$primario: rgb(187, 187, 187);
+$primario: rgb(223, 223, 223);
 $secundario: rgb(30, 30, 35);
 
 // Cuerpo
@@ -29,6 +29,10 @@ $secundario: rgb(30, 30, 35);
 }
 
 // Cartas
+#carta-cuerpo {
+    background-color: $primario;
+}
+
 /* Resolucion video */
 @media (min-width: 801px) {
     #video-cursos-recientes {
