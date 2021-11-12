@@ -1,26 +1,44 @@
-/* Medidas para las bandas laterales de colores en el cuerpo */
-@mixin medidas { padding-inline: 10%; }
+/*
+ * IMPORTANTE
+ * Para las opciones de media:
+ * min-width 800px se utiliza para el tamaño normal de un monitor
+ * max-widt 800px se utiliza para el tamaño normal de un celular
+ *
+*/
 
-/* Colores de la pagina */
-$secundario: rgb(201, 201, 201);
-$primario: rgb(250, 250, 250);
+/* Colores navbar */
+$primario: rgb(187, 187, 187);
+$secundario: rgb(30, 30, 35);
 
-/* Clases colores */
-.bg-secundario { background-color: $secundario; }
-.bg-primario { background-color: $primario; }
-.text-secundario { color: $secundario; }
-.text-primario { color: $primario; }
-
-/* Resolucion video */
-//Monitor
-@media (min-width: 768px) {
-    #video-cursos-recientes {
-        width: 400px;
-        height: 300px;
+// Cuerpo
+#seccion-cursos-titulo {
+    margin: 5%;
+    margin-left: 0;
+    font-size:xx-large;
+    margin-top: auto;
+}
+@media (min-width: 800px) {
+    #container-cuerpo {
+        margin: 50px;
     }
 }
 
-//Celular
+//Secciones
+section#cursos-recientes {
+    border-bottom: 1px solid $secundario;
+}
+
+// Cartas
+/* Resolucion video */
+@media (min-width: 801px) {
+    #video-cursos-recientes {
+        width: 220px;
+        height: 170px;
+    }
+    .container-cuerpo {
+        margin-left: 4%
+    }
+}
 @media (max-width: 800px) {
     #video-cursos-recientes {
         width: 211px;
@@ -28,33 +46,40 @@ $primario: rgb(250, 250, 250);
     }
 }
 
-/* Cuerpo */
-.cuerpo-detras {
-    background-color: $secundario;
-    @include medidas;
+//Ajuste de carta
+@media (max-width: 800px) {
+    #container-cartas {
+        display: inline-flex !important;
+    }
 }
 
-.cuerpo-delante {
-    background-color: $primario;
-    @include medidas;
+#container-cartas {
+    width: auto;
+    flex-wrap: wrap;
+    padding-left: 0;
 }
-
-.bordeado {
-    border: gray solid 1px;
-    border-bottom: 0;
-    border-top: 0;
-}
-
-/* Cartas */
 #carta-titulo {
     margin-bottom: 0;
 }
 #carta-texto {
     margin-bottom: 0;
 }
+.carta-conf {
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
 
-/* Botones */
-#ver-mas {
+// Botones|
+#container-ver-mas {
     text-align: center;
-    width: max-content;
+}
+#boton-ver-mas {
+    color: $primario;
+    background-color: $secundario;
+}
+@media (min-width: 801px) {
+    #boton-ver-mas {
+        padding-inline: 80px;
+        font-size: 150%;
+    }
 }
