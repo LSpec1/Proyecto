@@ -1,3 +1,8 @@
+form#loginform{
+    display:inline-flexbox
+}
+
+
 li {
     list-style: none;
 }
@@ -17,4 +22,41 @@ input{
 
 .recordarcontraseña{
     color: rgba(128, 128, 128, 0.192);
+}
+
+button {
+    background-color: #313F4F;
+    color: white;
+    border-radius: 5px;
+    border-color: #313F4F;
+}
+
+label#recordarclave{
+    color: grey;
+}
+
+a#recordarclaveinput{
+    color: grey;
+}
+
+a#olvidasteclave{
+    color: grey;
+}
+
+a#inicioempresa {
+    color: black;
+} 
+
+a#sincuenta{
+    color: grey;
+}
+
+button#registrate{
+    background-color: white;
+    color: #313F4F;
+    border-color: #313F4F;
+}
+
+label#terminos{
+    color: grey;
 }
