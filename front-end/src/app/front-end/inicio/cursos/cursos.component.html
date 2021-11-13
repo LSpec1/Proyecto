@@ -1,0 +1,34 @@
+<div class="cursos-recientes">
+    <h1 id="seccion-cursos-titulo">Continúa tus cursos</h1>
+    <div class="container d-flex justify-content-center" id="container-cartas">
+        <!--Tarjetas de video -->
+        <div *ngFor="let carta of cartas">
+            <div class="card bg-secundario carta-conf">
+                <!--Opciones de video-->
+                <iframe 
+                    id="video-cursos-recientes"
+                    src="https://www.youtube.com/embed/L1oMLsiMusQ"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                <!--Cuerpo-->
+                <div class="card-body" id="carta-cuerpo">
+                    <div class="card-tittle">
+                        <h3 id="carta-titulo">{{carta.titulo}}</h3>
+                    </div>
+                    <div class="card-text">
+                        <h4 id="carta-texto">{{carta.texto}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5" id="container-ver-mas">
+        <button type="button" class="btn btn btn-secondary" id="boton-ver-mas">
+            Ver más cursos
+        </button>
+    </div>
+</div>
