@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarScreenComponent } from './front-end/navbar/navbar-screen/navbar-screen.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistrarseScreenComponent } from './front-end/registrarse/registrarse-screen/registrarse-screen.component';
 import { InicioScreenComponent } from './front-end/inicio/inicio-screen/inicio-screen.component';
 import { LoginScreenComponent } from './front-end/login/login-screen/login-screen.component';
@@ -18,7 +18,7 @@ import { EmpleoScreenComponent } from './front-end/empleo/empleo-screen/empleo-s
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarScreenComponent,
+    NavbarComponent,
     RegistrarseScreenComponent,
     InicioScreenComponent,
     LoginScreenComponent,

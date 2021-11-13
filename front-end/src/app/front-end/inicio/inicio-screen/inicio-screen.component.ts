@@ -5,9 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './inicio-screen.component.html',
   styleUrls: ['./inicio-screen.component.scss']
 })
+
 export class InicioScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    let color_cuerpo_primario = "rgb(201, 201, 201)"
+  }
 
   ngOnInit(): void {
   }
