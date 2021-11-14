@@ -20,6 +20,8 @@ import { InfoComponent } from './front-end/inicio/info/info.component';
 
 //servicios
 import { LoginService } from './login.service';
+import { FiltrosComponent } from './front-end/cursos/filtros/filtros.component';
+import { CursosDisponiblesComponent } from './front-end/cursos/cursos-disponibles/cursos-disponibles.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { LoginService } from './login.service';
     EmpleoScreenComponent,
     CursosComponent,
     OfertasComponent,
-    InfoComponent
+    InfoComponent,
+    FiltrosComponent,
+    CursosDisponiblesComponent
   ],
   imports: [
     BrowserModule,
