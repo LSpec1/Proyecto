@@ -8,6 +8,7 @@ import { CursosService } from 'src/app/cursos.service';
 })
 export class CursosDisponiblesComponent implements OnInit {
 
+  //Variable que almacena lo obtenido en el servicio cursos
   listaCursos: any[] = [];
 
   constructor(private _cursos:CursosService) {

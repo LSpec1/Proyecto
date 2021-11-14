@@ -19,7 +19,10 @@ $secundario: rgb(30, 30, 35);
 }
 .container-busqueda {
     display: grid;
-    grid-template-rows: 0px 120px;
+    grid-template-rows: 40px 120px;
+}
+.container-busqueda form input {
+    width: auto;
 }
 .container-filtros-checkboxes{
     display: grid;

@@ -1,10 +1,14 @@
+<!--
+    Los cursos son obtenidos desde el ts de esta carpeta
+    que a su vez, este ts obtiene los datos en app/cursos.service.ts
+-->
+
+<h1 class="titulo">Cursos disponibles</h1>
 <div class="cursos">
-    <h1 class="titulo">Cursos disponibles</h1>
     <div class="listaCursos" *ngFor="let video of listaCursos">
         <div class="card">
             <!--Opciones de video-->
             <iframe 
-                id="video"
                 src="https://www.youtube.com/embed/AEiRa5xZaZw"
                 title="YouTube video player"
                 frameborder="0"
