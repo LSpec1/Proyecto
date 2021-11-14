@@ -1,0 +1,25 @@
+<div class="cursos">
+    <h1 class="titulo">Cursos disponibles</h1>
+    <div class="listaCursos" *ngFor="let video of listaCursos">
+        <div class="card">
+            <!--Opciones de video-->
+            <iframe 
+                id="video"
+                src="https://www.youtube.com/embed/AEiRa5xZaZw"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <!--Cuerpo-->
+            <div class="card-body" id="carta-cuerpo">
+                <div class="card-tittle">
+                    <h3 id="carta-titulo">{{video.titulo}}</h3>
+                </div>
+                <div class="card-text">
+                    <h4 id="carta-texto">{{video.total}} Módulos</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

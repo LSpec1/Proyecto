@@ -1,0 +1,19 @@
+//colores
+$primario: rgb(223, 223, 223);
+$secundario: rgb(30, 30, 35);
+
+//Clases normales
+.cursos {
+    display: grid;
+}
+.titulo {
+    font-size: xx-large;
+}
+
+.video {
+    width: 300px;
+    height: 200px;
+}
+.listaCursos .card{
+    background-color: $primario;
+}
