@@ -18,6 +18,9 @@ import { CursosComponent } from './front-end/inicio/cursos/cursos.component';
 import { OfertasComponent } from './front-end/inicio/ofertas/ofertas.component';
 import { InfoComponent } from './front-end/inicio/info/info.component';
 
+//servicios
+import { LoginService } from './login.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,9 @@ import { InfoComponent } from './front-end/inicio/info/info.component';
     NgbModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -76,6 +76,10 @@ $secundario: rgb(30, 30, 35);
     color: $primario;
     background-color: $secundario;
 }
+a {
+    color: $primario;
+    text-decoration: none;
+}
 @media (min-width: 801px) {
     #boton-ver-mas {
         padding-inline: 80px;
