@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'inicio', component: InicioScreenComponent },
   { path: 'certificados', component: CertificadosScreenComponent},
   { path: 'cursos', component: CursosScreenComponent},
-  { path: 'bolsa', component: BolsaScreenComponent}
+  { path: 'bolsa', component: BolsaScreenComponent},
+  { path: 'login', component: LoginScreenComponent}
 ];
 
 @NgModule({

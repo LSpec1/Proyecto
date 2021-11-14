@@ -1,1 +1,68 @@
-<p>registrarse-screen works!</p>
+<div id="fondo">
+<div class="container mt-5" id="container">
+  <div class="row">
+    <div class="col-6">
+
+    </div>
+    <div class="col-6" id="col-form">
+      <div class="container-fluid">
+        <form>
+          <div class="row">
+            <h1 class="col-12 text-center">Registrarse</h1>
+
+            <div class="col-6">
+              <li>
+                <label class="form-label">Nombre Completo*</label>
+                <input type="text" class="form-control" formControlName="nombre" placeholder="Nombres">
+              </li>
+
+              <li>
+                <label class="form-label">Email*</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="Email">
+              </li>
+
+              <li>
+                <label class="form-label">Contraseña*</label>
+                <input type="password" class="form-control" formControlName="contraseña" placeholder="Contraseña">
+              </li>
+
+              <li>
+                <label class="form-label">Documento*</label>
+                <input type="file" class="form-control-file" formControlName="documento" placeholder="Documento">
+              </li>
+
+
+            </div>
+
+            <div class="col-6">
+              <li>
+                <label class="form-label">Apellidos*</label>
+                <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
+              </li>
+              <li>
+                <label class="form-label">Pais*</label>
+                <select class="custom-select"  formControlName="paises" placeholder="Paises..." (change)="select($event.target)">
+                  <option *ngFor="let pais of paises" value="{{pais.isoCode}}">{{pais.name}}</option>
+                </select>
+              </li>
+
+              <li>
+                <label class="form-label">Ciudad*</label>
+                <select class="custom-select" formControlName="ciudades" placeholder="Ciudades...">
+                  <option *ngFor="let ciudad of ciudades">{{ciudad.name}}</option>
+                </select>
+              </li>
+
+              <li>
+                <label class="form-label">Teléfono*</label>
+                <input type="text" class="form-control" formControlName="telefono" placeholder="Telefono">
+              </li>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
