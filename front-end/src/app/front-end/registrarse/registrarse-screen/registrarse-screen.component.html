@@ -1,68 +1,121 @@
-<div id="fondo">
-<div class="container mt-5" id="container">
+<div class="container">
   <div class="row">
-    <div class="col-6">
-
+    <div class="col-lg-6">
+      <img src="assets/oficina.jpg" style="height: 100%; width:100%;">
     </div>
-    <div class="col-6" id="col-form">
-      <div class="container-fluid">
-        <form>
-          <div class="row">
-            <h1 class="col-12 text-center">Registrarse</h1>
+    <div class="col-lg-6">
+      <form [formGroup]="formulario" (ngSubmit)="validacion()" novalidate>
+        <div class="row">
+          <h1 class="col-12 text-center mt-5">Registrarse</h1>
 
-            <div class="col-6">
-              <li>
-                <label class="form-label">Nombre Completo*</label>
-                <input type="text" class="form-control" formControlName="nombre" placeholder="Nombres">
-              </li>
+          <div class="col-6">
+            <li>
+              <label class="form-label">Nombre Completo*</label>
+              <input type="text" class="form-control" formControlName="nombres" placeholder="Nombres"
+              [ngClass]="{
+                'is-invalid' : formulario.controls['nombres'].invalid && (formulario.controls['nombres'].dirty || formulario.controls['nombres'].touched),
+                'is-valid' : formulario.controls['nombres'].valid && (formulario.controls['nombres'].dirty || formulario.controls['nombres'].touched)
+              }">
+              <div class="alert alert-danger mt-3" *ngIf="formulario.controls['nombres'].invalid && (formulario.controls['nombres'].dirty || formulario.controls['nombres'].touched)">
+                <div *ngIf="formulario.controls['nombres'].hasError('pattern')">Su nombre no debe contener numeros</div>
+                <div *ngIf="formulario.controls['nombres'].hasError('required')">Su nombre es requerido</div>
+              </div>
+            </li>
 
-              <li>
-                <label class="form-label">Email*</label>
-                <input type="text" class="form-control" formControlName="email" placeholder="Email">
-              </li>
+            <li>
+              <label class="form-label">Email*</label>
+              <input type="text" class="form-control" formControlName="email" placeholder="Email"
+              [ngClass]="{
+                'is-invalid' : formulario.controls['email'].invalid && (formulario.controls['email'].dirty || formulario.controls['email'].touched),
+                'is-valid' : formulario.controls['email'].valid && (formulario.controls['email'].dirty || formulario.controls['email'].touched)
+              }">
 
-              <li>
-                <label class="form-label">Contraseña*</label>
-                <input type="password" class="form-control" formControlName="contraseña" placeholder="Contraseña">
-              </li>
+              <div class="alert alert-danger mt-3" *ngIf="formulario.controls['email'].invalid && (formulario.controls['email'].dirty || formulario.controls['email'].touched)">
+                <div *ngIf="formulario.controls['email'].hasError('required')">Su correo es requerido</div>
+                <div *ngIf="formulario.controls['email'].hasError('email')">Su email no tiene un formato valido.</div>
+              </div>
 
-              <li>
-                <label class="form-label">Documento*</label>
-                <input type="file" class="form-control-file" formControlName="documento" placeholder="Documento">
-              </li>
+            </li>
 
+            <li>
+              <label class="form-label">Contraseña*</label>
+              <input type="password" class="form-control" formControlName="contraseña" placeholder="Contraseña"
+              [ngClass]="{
+                'is-invalid' : formulario.controls['contraseña'].invalid && (formulario.controls['contraseña'].dirty || formulario.controls['contraseña'].touched),
+                'is-valid' : formulario.controls['contraseña'].valid && (formulario.controls['contraseña'].dirty || formulario.controls['contraseña'].touched)
+              }">
 
+              <div class="alert alert-danger mt-3" *ngIf="formulario.controls['contraseña'].invalid && (formulario.controls['contraseña'].dirty || formulario.controls['contraseña'].touched)">
+                <div *ngIf="formulario.controls['contraseña'].hasError('required')">Una contraseña es requerida</div>
+                <div *ngIf="formulario.controls['contraseña'].hasError('minlength')">La contraseña debe contener 6 caracteres minimo</div>
+              </div>
+            </li>
+
+            <li>
+              <label class="form-label">Documento*</label>
+              <input type="file" class="form-control-file" formControlName="documento" placeholder="Documento">
+            <div class="alert alert-danger mt-3" *ngIf="formulario.controls['documento'].invalid && (formulario.controls['documento'].untouched || formulario.controls['documento'].dirty)">
+              Es obligatorio subir su documento de identidad.
             </div>
 
-            <div class="col-6">
-              <li>
-                <label class="form-label">Apellidos*</label>
-                <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
-              </li>
-              <li>
-                <label class="form-label">Pais*</label>
-                <select class="custom-select"  formControlName="paises" placeholder="Paises..." (change)="select($event.target)">
-                  <option *ngFor="let pais of paises" value="{{pais.isoCode}}">{{pais.name}}</option>
-                </select>
-              </li>
+            </li>
 
-              <li>
-                <label class="form-label">Ciudad*</label>
-                <select class="custom-select" formControlName="ciudades" placeholder="Ciudades...">
-                  <option *ngFor="let ciudad of ciudades">{{ciudad.name}}</option>
-                </select>
-              </li>
-
-              <li>
-                <label class="form-label">Teléfono*</label>
-                <input type="text" class="form-control" formControlName="telefono" placeholder="Telefono">
-              </li>
-            </div>
 
           </div>
-        </form>
-      </div>
+
+          <div class="col-6">
+            <li>
+              <label class="form-label">Apellidos*</label>
+              <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos"
+              [ngClass]="{
+                'is-invalid' : formulario.controls['apellidos'].invalid && (formulario.controls['apellidos'].dirty || formulario.controls['apellidos'].touched),
+                'is-valid' : formulario.controls['apellidos'].valid && (formulario.controls['apellidos'].dirty || formulario.controls['apellidos'].touched)
+              }">
+              <div class="alert alert-danger mt-3" *ngIf="formulario.controls['apellidos'].invalid && (formulario.controls['apellidos'].dirty || formulario.controls['apellidos'].touched)">
+                <div *ngIf="formulario.controls['apellidos'].hasError('required')">Sus apellidos son requeridos</div>
+                <div *ngIf="formulario.controls['apellidos'].hasError('pattern')">Su apellidos no deben contener numeros</div>
+              </div>
+            </li>
+
+
+            <li>
+              <label class="form-label">Pais*</label>
+              <select class="custom-select"  formControlName="paises" placeholder="Paises..." (change)="select($event.target)">
+                <option *ngFor="let pais of paises" value="{{pais.isoCode}}">{{pais.name}}</option>
+              </select>
+            </li>
+
+            <li>
+              <label class="form-label">Ciudad*</label>
+              <select class="custom-select" formControlName="ciudades" placeholder="Ciudades...">
+                <option *ngFor="let ciudad of ciudades">{{ciudad.name}}</option>
+              </select>
+            </li>
+
+            <li>
+              <label class="form-label">Telefono*</label>
+              <input type="text" class="form-control" formControlName="telefono" placeholder="Telefono"
+              [ngClass]="{
+                'is-invalid' : formulario.controls['telefono'].invalid && (formulario.controls['telefono'].dirty || formulario.controls['telefono'].touched),
+                'is-valid' : formulario.controls['telefono'].valid && (formulario.controls['telefono'].dirty || formulario.controls['telefono'].touched)
+              }">
+              <div class="alert alert-danger mt-3" *ngIf="formulario.controls['telefono'].invalid && (formulario.controls['telefono'].dirty || formulario.controls['telefono'].touched)">
+                <div *ngIf="formulario.controls['telefono'].hasError('required')">Su telefono es requerido</div>
+              </div>
+            </li>
+
+          </div>
+        </div>
+
+        <li class="border-top pt-5">
+          <label class="form-label">Sube aquí tu CV preferiblemente en formato pdf (Opcional).</label>
+          <input type="file" class="form-control-file" formControlName="cv">
+        </li>
+
+        <li>
+          <button type="submit" class="btn btn-success" [disabled]="!formulario.valid">Registrarse</button>
+        </li>
+      </form>
     </div>
   </div>
-</div>
 </div>
