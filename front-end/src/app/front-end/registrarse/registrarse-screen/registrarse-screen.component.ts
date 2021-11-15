@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Country, State }  from 'country-state-city';
+import { City, Country, State }  from 'country-state-city';
 import { ICountry } from 'country-state-city/dist/lib/interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { state } from '@angular/animations';
 
 
 
@@ -14,8 +15,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 export class RegistrarseScreenComponent implements OnInit {
 
   public paises:ICountry[];
+
   ciudades:any;
   codigoPaises: string[] = ["AR","BO","CL","CO","CR","CU","EC","PE","UY","VE"]
+
+
 
   formulario:FormGroup;
   estado:boolean = false;
@@ -31,6 +35,8 @@ export class RegistrarseScreenComponent implements OnInit {
     }
 
 
+
+
     this.formulario = this.FormB.group({
         nombres: ["", [Validators.required, Validators.pattern("[^0-9]+")]],
         apellidos: ["",[Validators.required, Validators.pattern("[^0-9]+")]],
@@ -42,6 +48,8 @@ export class RegistrarseScreenComponent implements OnInit {
         telefono: ["",[Validators.required]],
         cv: [""]
     })
+
+
   }
 
   ngOnInit(): void {
@@ -58,12 +66,14 @@ export class RegistrarseScreenComponent implements OnInit {
       "nombres": this.formulario.get("nombres")?.value,
       "apellidos": this.formulario.get("apellidos")?.value,
       "email": this.formulario.get("email")?.value,
-      "paises": this.formulario.get("paises")?.value,
+      "pais": this.formulario.get("paises")?.value,
       "contraseña": this.formulario.get("contraseña")?.value,
-      "ciudades": this.formulario.get("ciudades")?.value,
+      "ciudad": this.formulario.get("ciudades")?.value,
       "documento": this.formulario.get("documento")?.value,
       "telefono": this.formulario.get("telefono")?.value,
       "cv": this.formulario.get("cv")?.value
     }];
+
   }
+
 }
