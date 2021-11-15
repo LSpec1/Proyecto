@@ -1,0 +1,19 @@
+//colores
+$primario: rgb(223, 223, 223);
+$secundario: rgb(30, 30, 35);
+
+//Clases que cambian con la resolucion
+@media (min-width: 800px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 2fr 3fr; //2 columnas
+        gap: 30px;
+    }
+}
+@media (max-width: 800px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;  //1 columna
+        gap: 30px;
+    }
+}
