@@ -17,6 +17,7 @@ import { EmpleoScreenComponent } from './front-end/empleo/empleo-screen/empleo-s
 import { CursosComponent } from './front-end/inicio/cursos/cursos.component';
 import { OfertasComponent } from './front-end/inicio/ofertas/ofertas.component';
 import { InfoComponent } from './front-end/inicio/info/info.component';
+import { FormsModule } from '@angular/forms'; //permite [(ngModule)] para input html -> typescript
 
 //servicios
 import { LoginService } from './login.service';
@@ -39,13 +40,14 @@ import { CursosDisponiblesComponent } from './front-end/cursos/cursos-disponible
     OfertasComponent,
     InfoComponent,
     FiltrosComponent,
-    CursosDisponiblesComponent
+    CursosDisponiblesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [
     LoginService

@@ -10,6 +10,7 @@ export class CursosDisponiblesComponent implements OnInit {
 
   //Variable que almacena lo obtenido en el servicio cursos
   listaCursos: any[] = [];
+  filtros: any;
 
   constructor(private _cursos:CursosService) {
     this.listaCursos = _cursos.getListaVideos();
@@ -18,4 +19,7 @@ export class CursosDisponiblesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  setFiltros(){
+
+  }
 }
