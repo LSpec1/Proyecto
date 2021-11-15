@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CursosService } from 'src/app/cursos.service';
+import { FiltrosService } from 'src/app/filtros.service';
 
 @Component({
   selector: 'app-cursos-disponibles',
@@ -12,7 +13,7 @@ export class CursosDisponiblesComponent implements OnInit {
   listaCursos: any[] = [];
   filtros: any;
 
-  constructor(private _cursos:CursosService) {
+  constructor(private _cursos:CursosService, private _filtros:FiltrosService) {
     this.listaCursos = _cursos.getListaVideos();
   }
 
@@ -20,6 +21,6 @@ export class CursosDisponiblesComponent implements OnInit {
   }
 
   setFiltros(){
-
+    this.filtros = this._filtros.getFiltros();
   }
 }

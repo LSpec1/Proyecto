@@ -4,21 +4,21 @@
     <div class="container-busqueda">
         <h1 class="titulo">Filtrar por:</h1>
         <form class="form-inline needs-validation mt-4">
-            <input class="form-control mr-sm-2 margen-text" type="search" placeholder="Buscar curso" aria-label="Search">
-            <button class="btn boton-custom my-2 my-sm-0" (click)="buscar()" id="buscar">Buscar</button>
+            <input class="form-control mr-sm-2 margen-text" type="search" placeholder="Buscar curso" aria-label="Search" id="campoBuscar">
+            <button class="btn boton-custom my-2 my-sm-0" (click)="buscar()">Buscar</button>
         </form>
     </div>
     <h3 class="mt-2">Tematica</h3>
     <div class="container-checkbox" *ngFor="let tematica of tematicasCheckbox">
         <div class="checkbox">
-            <input type="checkbox" (change)="onChange()" [(ngModel)]="tematica.select" class="checkbox" name="{{tematica.nombre}}">
+            <input type="checkbox" [(ngModel)]="tematica.select" class="checkbox" name="{{tematica.nombre}}">
             <label for="{{tematica.nombre}}">{{tematica.nombre}}</label>
         </div>
     </div>
     <h3 class="mt-4">Duracion</h3>
     <div class="container-checkbox" *ngFor="let duracion of duracionesCheckbox">
         <div class="checkbox">
-            <input type="checkbox" (change)="onChange()" [(ngModel)]="duracion.select" class="checkbox" name="{{duracion.modulos}}">
+            <input type="checkbox" [(ngModel)]="duracion.select" class="checkbox" name="{{duracion.modulos}}">
             <label for="{{duracion.modulos">{{duracion.modulos}} Módulos</label>
         </div>
     </div>

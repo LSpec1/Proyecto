@@ -4,6 +4,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
+import { FiltrosService } from 'src/app/filtros.service';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class FiltrosComponent implements OnInit {
     {id: 3,modulos: 4, select: false}
 ]
 
-  constructor() {
+  constructor(private _filtros:FiltrosService) {
     
   }
 
@@ -33,9 +34,13 @@ export class FiltrosComponent implements OnInit {
   }
 
   buscar(){
+    const campo:any = document.getElementById("campoBuscar");
     //obtenemos todos los filtros que tengan la varible select en true
-    const filtro1 = this.getTematicas();
-    const filtro2 = this.getDuraciones();
+    const filtro1:any[] = this.getTematicas();
+    const filtro2:any[] = this.getDuraciones();
+    const filtro3:any = campo.value;  
+    //console.log(filtro1,filtro2,filtro3);
+    this._filtros.setFiltros(filtro1,filtro2,filtro3);
   }
 
   getTematicas(){
@@ -46,7 +51,7 @@ export class FiltrosComponent implements OnInit {
           aux.push(element)
         }
       }
-    console.log("hola", aux);
+    //console.log("hola", aux);
     return aux;
   }
 
@@ -58,12 +63,14 @@ export class FiltrosComponent implements OnInit {
           aux.push(element)
         }
       }
-      console.log("hola", aux);
+      //console.log("hola", aux);
       return aux;
   }
 
+  /*
   onChange(){
     console.log(this.tematicasCheckbox);
     console.log(this.duracionesCheckbox);
   }
+  */
 }
