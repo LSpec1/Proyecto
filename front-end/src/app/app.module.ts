@@ -21,10 +21,10 @@ import { FormsModule } from '@angular/forms'; //permite [(ngModule)] para input 
 import { CursosDisponiblesComponent } from './front-end/cursos/cursos-disponibles/cursos-disponibles.component';
 
 //servicios
-import { LoginService } from './login.service';
+import { LoginService } from './servicios/login.service';
 import { FiltrosComponent } from './front-end/cursos/filtros/filtros.component';
-import { CursosService } from './cursos.service';
-import { FiltrosService } from './filtros.service';
+import { CursosService } from './servicios/cursos.service';
+import { FiltrosService } from './servicios/filtros.service';
 
 @NgModule({
   declarations: [

@@ -7,7 +7,7 @@
 <div class="cursos">
     <div class="listaCursos" *ngFor="let video of listaCursos">
         <!--Solo seleccionar los videos de id = 1 y modulo = 1, para asi solo obtener 1 video por curso-->
-        <div *ngIf="(video.id == 1) && (video.modulo == 1)">
+        <div *ngIf="(video.id_video_curso == 1) && (video.modulo == 1)">
             <div class="card">
                 <!--Opciones de video-->
                 <iframe 

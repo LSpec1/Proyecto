@@ -4,7 +4,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { FiltrosService } from 'src/app/filtros.service';
+import { FiltrosService } from 'src/app/servicios/filtros.service';
 
 
 @Component({
