@@ -13,7 +13,7 @@ $secundario: rgb(30, 30, 35);
 // Cuerpo
 #seccion-cursos-titulo {
     margin: 5%;
-    margin-left: 0;
+    margin-bottom: 10%;
     font-size:xx-large;
     margin-top: auto;
 }
@@ -21,11 +21,6 @@ $secundario: rgb(30, 30, 35);
     #container-cuerpo {
         margin: 50px;
     }
-}
-
-//Secciones
-.cursos-recientes {
-    border-bottom: 1px solid $secundario;
 }
 
 // Cartas
@@ -80,6 +75,10 @@ $secundario: rgb(30, 30, 35);
 #boton-ver-mas {
     color: $primario;
     background-color: $secundario;
+}
+a {
+    color: $primario;
+    text-decoration: none;
 }
 @media (min-width: 801px) {
     #boton-ver-mas {

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -18,6 +20,14 @@ import { CursosComponent } from './front-end/inicio/cursos/cursos.component';
 import { OfertasComponent } from './front-end/inicio/ofertas/ofertas.component';
 import { InfoComponent } from './front-end/inicio/info/info.component';
 
+
+
+
+import { LoginService } from './login.service';
+import { FiltrosComponent } from './front-end/cursos/filtros/filtros.component';
+import { CursosDisponiblesComponent } from './front-end/cursos/cursos-disponibles/cursos-disponibles.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,15 +42,22 @@ import { InfoComponent } from './front-end/inicio/info/info.component';
     EmpleoScreenComponent,
     CursosComponent,
     OfertasComponent,
-    InfoComponent
+    InfoComponent,
+    FiltrosComponent,
+    CursosDisponiblesComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
+
   ],
-  providers: [],
+  providers: [
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

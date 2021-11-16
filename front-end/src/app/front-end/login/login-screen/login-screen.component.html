@@ -27,8 +27,7 @@
                 </li>
                 <li>
                     <br>
-                    <!-- hacer Nfif para el inicio de sesión --> enviar a inicio-screen-component -->
-                    <button type="submit" title="Ingresar" name="Ingresar">Iniciar Sesión</button>
+                    <button type="submit" title="Ingresar" (click)="mandarEstate(1)" name="Ingresar">Iniciar Sesión</button>
                 </li>
                 <br>
                 <li>
@@ -42,13 +41,13 @@
                 </li>
                 <li>
                     <br>
-                    <button id="registrate" type="submit" title="Registrarse" name="registrate">Registrate</button>
+                    <button id="registrate" type="button" title="Registrarse" name="registrate" [routerLink]="['register']">Registrate</button>
                 </li>
                 <br>
                 <li>
                     <label id="terminos" for="terminosycondiciones">Al registrarte en la Aplicación, aceptas nuestros Terminos y Política de privacidad</label>
                 </li>
-            
+
             </form>
         </div>
     </div>

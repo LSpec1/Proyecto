@@ -1,0 +1,22 @@
+//colores
+$primario: rgb(223, 223, 223);
+$secundario: rgb(30, 30, 35);
+
+//Clases normales
+.cursos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.titulo {
+    font-size: xx-large;
+    margin-bottom: calc(30px + 4%);
+}
+.listaCursos .card{
+    background-color: $primario;
+}
+#carta-cuerpo {
+    display: grid;
+    grid-template-rows: 32px 16px;
+    padding-top: 10px;
+}
