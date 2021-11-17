@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": ";AAAA;;;;;;EAME;AAEF,aAAa;AAIb,MAAM,EAAE,SAAS,EAAE,KAAK;EACpB,AAAA,iBAAiB,CAAC;IACd,MAAM,EAAE,IAAI;GACf;;;AAGL,AAAA,iBAAiB,CAAC;EACd,MAAM,EAAE,KAAK,CAAC,KAAK,CAVZ,OAAkB;EAWzB,eAAe,EAAC,QAAQ;CAC3B",
     "sources": [
         "../front-end/src/app/front-end/inicio/inicio-screen/inicio-screen.component.scss"
     ],

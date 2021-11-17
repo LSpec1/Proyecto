@@ -1,0 +1,42 @@
+/* Colores */
+.bg-primario {
+  background-color: #dfdfdf;
+}
+
+.bg-secundario {
+  background-color: #1e1e23;
+}
+
+.primario {
+  color: #dfdfdf;
+}
+
+@media (min-width: 800px) {
+  #container-principal {
+    margin-top: 42px;
+    border-left: 3px solid #dfdfdf;
+    height: 127vh;
+  }
+}
+
+#texto-carta {
+  margin-bottom: -10px;
+  margin-top: 5px;
+  margin-left: 18px;
+}
+
+.boton-custom {
+  border: 2px solid #1e1e23;
+  background-color: white;
+  color: #1e1e23;
+  padding: 14px 28px;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.boton-custom:hover {
+  background-color: #1e1e23;
+  color: #dfdfdf;
+}
+/*# sourceMappingURL=info.component.css.map */

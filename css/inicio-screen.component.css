@@ -1,1 +1,20 @@
-/* No CSS *//*# sourceMappingURL=inicio-screen.component.css.map */
+@charset "UTF-8";
+/*
+ * IMPORTANTE
+ * Para las opciones de media:
+ * min-width 800px se utiliza para el tamaño normal de un monitor
+ * max-widt 800px se utiliza para el tamaño normal de un celular
+ *
+*/
+/* Colores */
+@media (min-width: 800px) {
+  #container-cuerpo {
+    margin: 50px;
+  }
+}
+
+.linea-horizontal {
+  border: 0.5px solid #dfdfdf;
+  border-collapse: separate;
+}
+/*# sourceMappingURL=inicio-screen.component.css.map */

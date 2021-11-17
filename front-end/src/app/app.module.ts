@@ -18,13 +18,10 @@ import { CursosComponent } from './front-end/inicio/cursos/cursos.component';
 import { OfertasComponent } from './front-end/inicio/ofertas/ofertas.component';
 import { InfoComponent } from './front-end/inicio/info/info.component';
 import { FormsModule } from '@angular/forms'; //permite [(ngModule)] para input html -> typescript
-import { CursosDisponiblesComponent } from './front-end/cursos/cursos-disponibles/cursos-disponibles.component';
 
 //servicios
 import { LoginService } from './servicios/login.service';
-import { FiltrosComponent } from './front-end/cursos/filtros/filtros.component';
 import { CursosService } from './servicios/cursos.service';
-import { FiltrosService } from './servicios/filtros.service';
 
 @NgModule({
   declarations: [
@@ -40,9 +37,7 @@ import { FiltrosService } from './servicios/filtros.service';
     EmpleoScreenComponent,
     CursosComponent,
     OfertasComponent,
-    InfoComponent,
-    FiltrosComponent,
-    CursosDisponiblesComponent
+    InfoComponent
   ],
   imports: [
     BrowserModule,
@@ -53,8 +48,7 @@ import { FiltrosService } from './servicios/filtros.service';
   ],
   providers: [
     LoginService,
-    CursosService,
-    FiltrosService
+    CursosService
   ],
   bootstrap: [AppComponent]
 })

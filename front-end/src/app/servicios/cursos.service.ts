@@ -10,11 +10,11 @@ export class CursosService {
   [
     {
       id_curso: 1,
-      curso:"Programacion",
+      curso:"Programación",
       id_video_curso:1,
       modulo: 1,
       total: 4,
-      titulo:"Curso de programacion en JS",
+      titulo:"Curso de programación en JS",
       link:`https://www.youtube.com/embed/4dKuDEWEAmo`
     },
     {
@@ -28,7 +28,7 @@ export class CursosService {
     },
     {
       id_curso: 3,
-      curso:"Programacion",
+      curso:"Programación",
       id_video_curso:1,
       modulo: 1,
       total: 2,
