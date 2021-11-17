@@ -1,1 +1,114 @@
-/* No CSS *//*# sourceMappingURL=cursos-screen.component.css.map */
+@media (min-width: 900px) {
+  .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 655px;
+        grid-template-columns: 1fr 655px;
+    gap: 30px;
+  }
+  .filtros {
+    border-right: 2px solid #dfdfdf;
+    padding-right: 50px;
+  }
+  .listaCursos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    /* max-width: 228px; */
+    /* grid-gap: 10px; */
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .listaCursos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.filtros {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (max-content)[9];
+      grid-template-rows: repeat(9, -webkit-max-content);
+      grid-template-rows: repeat(9, max-content);
+}
+
+.boton-custom {
+  border: 1px solid #1e1e23;
+}
+
+.container-busqueda {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 40px 120px;
+      grid-template-rows: 40px 120px;
+}
+
+.container-busqueda form input {
+  width: auto;
+}
+
+.container-filtros-checkboxes {
+  display: -ms-grid;
+  display: grid;
+}
+
+.container-checkbox {
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.checkbox label {
+  color: #1e1e23;
+  margin-left: 10px;
+}
+
+.titulo-filtros {
+  font-size: xx-large;
+  margin-bottom: calc(30px + 4%);
+}
+
+.cursos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 90px;
+      grid-template-rows: 90px;
+}
+
+.listaCursos .card {
+  background-color: #dfdfdf;
+}
+
+#carta-cuerpo {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 32px 16px;
+      grid-template-rows: 32px 16px;
+  padding-top: 10px;
+}
+
+.titulo-cursos {
+  font-size: xx-large;
+}
+/*# sourceMappingURL=cursos-screen.component.css.map */

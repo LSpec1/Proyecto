@@ -1,1 +1,43 @@
-/* No CSS *//*# sourceMappingURL=app.component.css.map */
+/* Medidas para las bandas laterales de colores en el cuerpo */
+/* Colores de los bordes de la pagina */
+/* Clases colores */
+.bg-secundario {
+  background-color: #c9c9c9;
+}
+
+.bg-primario {
+  background-color: #fafafa;
+}
+
+.text-secundario {
+  color: #c9c9c9;
+}
+
+.text-primario {
+  color: #fafafa;
+}
+
+/* Cuerpo */
+.cuerpo-detras {
+  background-color: #c9c9c9;
+  padding-inline: 10%;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
+.cuerpo-delante {
+  background-color: #fafafa;
+  padding-inline: 10%;
+}
+
+.text-terciario {
+  color: #1e1e23;
+}
+
+.bordeado {
+  border: gray solid 1px;
+  border-bottom: 0;
+  border-top: 0;
+}
+/*# sourceMappingURL=app.component.css.map */
