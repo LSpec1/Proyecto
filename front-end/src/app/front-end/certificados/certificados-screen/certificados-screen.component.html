@@ -1,1 +1,49 @@
-<p>certificados-screen works!</p>
+<div class="contenedor" id="cursos-terminados">
+    <h1>Cursos Terminados</h1>
+    <br>
+    <!--Tarjetas de certificado -->
+    <div class="container mt-3" align-items-stretch >  
+        <div *ngFor="let carta of certificados">
+            <div class="card-group mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../../../../assets/certificado.png" alt="">
+                        <h3 class="card-title">{{carta.titulo}}</h3>
+                        <a href="#" class="btn btn-primary">Certificado</a>
+                    </div>
+                </div>          
+        </div>
+    </div>  
+
+</div>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<div class="container">
+    <h1>Otros Cursos</h1>
+    <br>
+    <div class="container mt-3 d-flex" id="container-cartas">
+        <!--Tarjetas de video -->
+        <div *ngFor="let carta of otroscursos">
+            <div class="card bg-secundario carta-conf">
+                <!--Opciones de video-->
+                <iframe 
+                    id="video-cursos-recientes"
+                    src="https://www.youtube.com/embed/L1oMLsiMusQ"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                <!--Cuerpo-->
+                <div class="card-body" id="carta-cuerpo">
+                    <div class="card-tittle">
+                        <h3 id="carta-titulo">{{carta.titulo}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
