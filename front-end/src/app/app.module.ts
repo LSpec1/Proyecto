@@ -47,8 +47,8 @@ import { CursosService } from './servicios/cursos.service';
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     LoginService,

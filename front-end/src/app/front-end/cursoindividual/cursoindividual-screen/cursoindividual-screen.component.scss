@@ -1,0 +1,45 @@
+.grid {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); //3 columnas
+    grid-template-rows: repeat(2, auto); //3 filas
+    grid-gap: 20px; //separacion
+
+    grid-template-areas: "video video sidebar"
+                         "rel   rel   sidebar";
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.video {
+    width: 650px;
+    height: 430px;
+    border: 1px solid black;
+    grid-area: video;
+}
+
+.relacionado {
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    grid-area: rel;
+}
+
+.sidebar {
+    width: 200px;
+    height: 600px;
+    border: 1px solid black;
+    grid-area: sidebar;
+}
+
+//Clases que cambian con la resolucion
+@media screen and (max-width: 800px) { //125%
+    .grid {
+        grid-template-areas: "video video video"
+                             "rel   rel   rel"
+                             "sidebar sidebar sidebar";
+    }
+}

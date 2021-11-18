@@ -6,12 +6,14 @@ import { CursosScreenComponent } from './front-end/cursos/cursos-screen/cursos-s
 import { BolsaScreenComponent } from './front-end/bolsa/bolsa-screen/bolsa-screen.component';
 import { LoginScreenComponent } from './front-end/login/login-screen/login-screen.component';
 import { RegistrarseScreenComponent } from './front-end/registrarse/registrarse-screen/registrarse-screen.component';
+import { CursoindividualScreenComponent } from './front-end/cursoindividual/cursoindividual-screen/cursoindividual-screen.component';
 
 const routes: Routes = [
   { path: '', component: LoginScreenComponent},
   { path: 'inicio', component: InicioScreenComponent},
   { path: 'certificados', component: CertificadosScreenComponent},
   { path: 'cursos', component: CursosScreenComponent},
+  { path: 'cursos/curso-individual', component: CursoindividualScreenComponent},
   { path: 'bolsa', component: BolsaScreenComponent},
   { path: 'login', component: LoginScreenComponent},
   { path: 'register', component: RegistrarseScreenComponent},
