@@ -1,1 +1,22 @@
-<p>bolsa-screen works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <h1>Filtrar por:</h1>
+      <form>
+        Formulario xd
+      </form>
+    </div>
+    <div class="col-lg-8">
+      <div class="container-fluid">
+        <div class="media border m-5" id="media"  [routerLink]="['/empleo',empleo._idNoticia]" routerLinkActive="router-link-active" *ngFor="let empleo of _bolsa.getEmpleos()">
+          <div class="media-body m-5">
+            <h1>{{empleo.titulo}}</h1>
+            <h3>{{empleo.empresa}} | {{empleo.pais}}, {{empleo.ciudad}}</h3>
+            <footer class="blockquote-footer">Hace {{empleo.fecha | amLocale:"es" | amTimeAgo:true}}</footer>
+          </div>
+          <img class="m-5 rounded align-self-center" style="width:140px; height: 125px;" src="{{empleo.imagen}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
