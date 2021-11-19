@@ -1,1 +1,71 @@
-<p>certificados-screen works!</p>
+<div class="contenedor" id="cursos-terminados">
+    <h1>Cursos Terminados</h1>
+    <br>
+    <!--Tarjetas de certificado -->
+    <div class="container mt-3" align-items-stretch >  
+        <div *ngFor="let carta of certificados">
+            <div class="card-group mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../../../../assets/certificado.png" alt="">
+                        <h3 class="card-title">{{carta.titulo}}</h3>
+                        <button type="button" class="btn btn-primary" (click)="openScrollableContent(longContent)" data-toggle="modal" data-target=".bd-example-modal-lg">Certificado</button> 
+                        <!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="openLg(content)">Modal scrollable content</button>                      -->
+                    </div>
+                </div>          
+        </div>
+    </div>  
+
+
+
+</div>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<div class="container">
+    <h1>Otros Cursos</h1>
+    <br>
+    <div class="container mt-3 d-flex" id="container-cartas">
+        <!--Tarjetas de video -->
+        <div *ngFor="let carta of otroscursos">
+            <div class="card bg-secundario carta-conf">
+                <!--Opciones de video-->
+                <iframe 
+                    id="video-cursos-recientes"
+                    src="https://www.youtube.com/embed/L1oMLsiMusQ"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                <!--Cuerpo-->
+                <div class="card-body" id="carta-cuerpo">
+                    <!-- hacer router link al curso creado por la monse -->
+                    <div class="card-tittle">
+                        <h2 id="carta-titulo">{{carta.titulo}}</h2>
+                        <h3 id="descripcion-curso">{{carta.descripcion}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #longContent let-modal>
+    <div class="modal-header">
+      <button id="botondescarga">
+        <a href="../../../../assets/certificado-1.png" download><img src="../../../../assets/certificado-1.png" alt="certificado-1"/></a>
+        <span class="material-icons">
+            file_download
+        </span>
+      </button>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+  </ng-template>
+  

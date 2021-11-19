@@ -1,0 +1,58 @@
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+h3{
+    margin-top: 1rem;
+}
+
+div#cursos-terminados.contenedor{
+    display: inline-block;
+    padding-right: 3rem;
+}
+
+div.container.mt-3{
+    display: flex;
+}
+
+div{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 20px;
+}
+
+a.btn.btn-primary{
+    align-items: center;
+    background-color: #313F4F;
+    size: 4rem;
+    margin-left: 25%;
+}
+
+h3.card-title{
+    margin-left: 15%;
+}
+
+h3.card-titulo{
+    margin-left: 15%;
+}
+
+
+div.modal-content {
+    min-width: 800px;
+    min-height: 600px;
+}
+
+img#imagen-modal{
+    object-fit:cover;
+}
+
+button#botondescarga{
+    border-radius: 20px;
+    background-color: white;
+    border-color: white;
+}
+
+button.btn.btn-primary{
+    margin-left: 4rem;
+}
