@@ -14,27 +14,28 @@ div#cursos-terminados.contenedor{
 
 div.container.mt-3{
     display: flex;
-}
-
-div{
     margin-right: 0.5rem;
     margin-left: 0.5rem;
-    border-radius: 20px;
+}
+
+div.card{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 a.btn.btn-primary{
     align-items: center;
     background-color: #313F4F;
     size: 4rem;
-    margin-left: 25%;
+    margin-left: 35%;
 }
 
 h3.card-title{
-    margin-left: 15%;
+    margin-left: 20%;
 }
 
 h3.card-titulo{
-    margin-left: 15%;
+    margin-left: 20%;
 }
 
 
@@ -54,5 +55,5 @@ button#botondescarga{
 }
 
 button.btn.btn-primary{
-    margin-left: 4rem;
+    margin-left: 6rem;
 }
