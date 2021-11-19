@@ -5,10 +5,11 @@ $secundario: rgb(30, 30, 35);
 .grid {
     display: grid;
     grid-template-columns: 25% 30% 40%; //3 columnas
-    grid-template-rows: repeat(2, auto); //3 filas
+    grid-template-rows: repeat(3, auto); //3 filas
     grid-gap: 20px; //separacion
 
     grid-template-areas: "video video sidebar"
+                         "video video sidebar"
                          "rel   rel   sidebar";
 }
 .flex {
@@ -26,10 +27,17 @@ $secundario: rgb(30, 30, 35);
 }
 .relacionado {
     padding: 20px;
+    padding-top: 0;
     grid-area: rel;
 }
 .sidebar {
     grid-area: sidebar;
+    border-left: 3px solid $primario;
+    padding-left: 34px;
+    grid-template-rows: 20% 10% 70%;
+    text-align: center;
+    justify-items: center;
+    display: grid;
 }
 
 //Clases que cambian con la resolucion
@@ -53,15 +61,16 @@ $secundario: rgb(30, 30, 35);
     visibility: hidden;
 }
 
-.sidebar {
-    border-left: 3px solid $primario;
-    padding-left: 34px;
-    max-height: 669px;
-    grid-template-rows: 20% 10% 70%;
-    text-align: center;
-    justify-items: center;
-    display: grid;
+.video-container .card {
+    height: 300px;
 }
+.video-container .card-body {
+    //padding-top: 80px;
+}
+.video-container iframe {
+    height: 300px;
+}
+
 .sidebar .casilla-comentario {
     margin: 23px;
     margin-bottom: 0;
@@ -87,7 +96,6 @@ $secundario: rgb(30, 30, 35);
     border: 3px solid $primario;
     border-radius: 10px;
     max-width: 350px;
-    max-height: 500px;
     padding: 35px;
     padding-left: 16px;
     padding-right: 10px;
@@ -98,23 +106,25 @@ $secundario: rgb(30, 30, 35);
 }
 .sidebar .comentario {
     border-bottom: 3px solid $primario;
-    padding-bottom: 25px;
-}
-.sidebar .comentario .texto {
-    max-height: 125px;
-    overflow: auto;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
 }
 .sidebar .comentario .nombre {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-left: 15px;
+}
+.sidebar .comentario .texto {
+    text-align: left;
+    margin-left: 25px;
 }
 
 .relacionado .contenedor {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-right: 50px;
 }
 .relacionado .card{
     max-width: 250px;

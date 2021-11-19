@@ -15,7 +15,7 @@ export class CursosService {
       modulo: 1,
       total: 4,
       titulo:"Curso de programación en JS",
-      link:`https://www.youtube.com/embed/4dKuDEWEAmo`
+      link:"https://www.youtube.com/watch?v=AEiRa5xZaZw"
     },
     {
       id_curso: 2,
@@ -24,7 +24,7 @@ export class CursosService {
       modulo: 1,
       total: 3,
       titulo:"Curso de Diseño",
-      link:`https://www.youtube.com/embed/4dKuDEWEAmo`
+      link:'https://www.youtube.com/embed/4dKuDEWEAmo'
     },
     {
       id_curso: 3,
@@ -33,7 +33,7 @@ export class CursosService {
       modulo: 1,
       total: 2,
       titulo:"Curso de Desarrollo de Videojuegos",
-      link:`https://www.youtube.com/embed/4dKuDEWEAmo`
+      link:'https://www.youtube.com/embed/4dKuDEWEAmo'
     },
     {
       id_curso: 4,
@@ -42,7 +42,7 @@ export class CursosService {
       modulo: 1,
       total: 2,
       titulo:"Curso de Humanidades",
-      link:`https://www.youtube.com/embed/4dKuDEWEAmo`
+      link:'https://www.youtube.com/embed/4dKuDEWEAmo'
     },
     {
       id_curso: 4,
@@ -51,7 +51,7 @@ export class CursosService {
       modulo: 1,
       total: 2,
       titulo:"Curso de Humanidades",
-      link:`https://www.youtube.com/embed/4dKuDEWEAmo`
+      link:'https://www.youtube.com/embed/4dKuDEWEAmo'
     },
     {
       id_curso: 4,
@@ -60,7 +60,7 @@ export class CursosService {
       modulo: 1,
       total: 2,
       titulo:"Curso de Humanidades",
-      link:`https://www.youtube.com/embed/4dKuDEWEAmo`
+      link:'https://www.youtube.com/embed/4dKuDEWEAmo'
     },
     {
       id_curso: 2,
@@ -69,7 +69,7 @@ export class CursosService {
       modulo: 2,
       total: 2,
       titulo:"Curso de Diseño",
-      link:`https://www.youtube.com/embed/4dKuDEWEAmo`
+      link:'https://www.youtube.com/embed/4dKuDEWEAmo'
     },
     {
       id_curso: 2,
@@ -78,7 +78,7 @@ export class CursosService {
       modulo: 2,
       total: 2,
       titulo:"Curso de Diseño",
-      link:`https://www.youtube.com/embed/4dKuDEWEAmo`
+      link:'https://www.youtube.com/embed/4dKuDEWEAmo'
     }
   ];
 
