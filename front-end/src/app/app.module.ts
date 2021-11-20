@@ -24,8 +24,14 @@ import { FormsModule } from '@angular/forms'; //permite [(ngModule)] para input 
 //servicios
 import { LoginService } from './servicios/login.service';
 import { CursosService } from './servicios/cursos.service';
+<<<<<<< HEAD
 import { SegundologinScreenComponent } from './front-end/segundologin-screen/segundologin-screen.component';
+=======
+import { BolsaService } from './servicios/bolsa.service';
+>>>>>>> c5b4f561652a5ab409d4b3ab28e429b3680a97ca
 
+//Modulos externos
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   declarations: [
@@ -50,11 +56,13 @@ import { SegundologinScreenComponent } from './front-end/segundologin-screen/seg
     NgbModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MomentModule
   ],
   providers: [
     LoginService,
-    CursosService
+    CursosService,
+    BolsaService
   ],
   bootstrap: [AppComponent]
 })
