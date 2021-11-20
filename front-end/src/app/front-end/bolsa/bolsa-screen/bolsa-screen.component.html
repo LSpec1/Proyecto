@@ -1,1 +1,74 @@
-<p>bolsa-screen works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <h1>Filtrar por:</h1>
+      <form>
+        <div class="input-group mb-5">
+          <input type="text" class="form-control">
+          <div class="input-group-prepend">
+            <button class="btn material-icons border-right border-top border-bottom">search</button>
+          </div>
+        </div>
+        <div class="col d-flex flex-column">
+          <div id="wrapper-ubicacion">
+            <label class="form-label">Ubicación</label>
+            <div class="form-check col">
+              <input class="form-check-input" type="checkbox">
+              <label class="form-check-label">1</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input" type="checkbox">
+              <label class="form-check-label">2</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input" type="checkbox">
+              <label class="form-check-label">3</label>
+            </div>
+          </div>
+
+          <div id="wrapper-jornada">
+            <label class="form-label mt-5">Jornada</label>
+            <div class="form-check col-12">
+
+              <input class="form-check-input" type="checkbox">
+              <label class="form-check-label">Tiempo completo</label>
+            </div>
+            <div class="form-check col-12">
+              <input class="form-check-input" type="checkbox">
+              <label class="form-check-label">Tiempo Parcial</label>
+            </div>
+            <div class="form-check col-12">
+              <input class="form-check-input" type="checkbox">
+              <label class="form-check-label">Por horas</label>
+            </div>
+          </div>
+          <div id="wrapper-salario" class="mt-5">
+            <label for="salario" class="form-label col-12">Salario</label>
+            <input type="range" min="0" max="5000" value="0" class="form-range col-12" id="salario">
+            <div class="d-flex flex-wrap justify-content-between">
+              <label class="form-label">$0</label>
+              <label class="form-label">$1500</label>
+              <label class="form-label">$3000</label>
+            </div>
+
+          </div>
+        </div>
+
+      </form>
+
+
+    </div>
+    <div class="col-8">
+      <div class="container-fluid">
+        <div class="media border m-5" id="media"  [routerLink]="['/empleo',empleo._idNoticia]" routerLinkActive="router-link-active" *ngFor="let empleo of _bolsa.getEmpleos()">
+          <div class="media-body m-5">
+            <h1>{{empleo.titulo}}</h1>
+            <h3>{{empleo.empresa}} | {{empleo.pais}}, {{empleo.ciudad}}</h3>
+            <footer class="blockquote-footer">Hace {{empleo.fecha | amLocale:"es" | amTimeAgo:true}}</footer>
+          </div>
+          <img class="m-5 rounded align-self-center" style="width:140px; height: 125px;" src="{{empleo.imagen}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

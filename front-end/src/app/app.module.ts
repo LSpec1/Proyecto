@@ -20,11 +20,15 @@ import { CursosComponent } from './front-end/inicio/cursos/cursos.component';
 import { OfertasComponent } from './front-end/inicio/ofertas/ofertas.component';
 import { InfoComponent } from './front-end/inicio/info/info.component';
 import { FormsModule } from '@angular/forms'; //permite [(ngModule)] para input html -> typescript
+import { SegundologinScreenComponent } from './front-end/segundologin-screen/segundologin-screen.component';
 
 //servicios
 import { LoginService } from './servicios/login.service';
 import { CursosService } from './servicios/cursos.service';
+import { BolsaService } from './servicios/bolsa.service';
 
+//Modulos externos
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,8 @@ import { CursosService } from './servicios/cursos.service';
     EmpleoScreenComponent,
     CursosComponent,
     OfertasComponent,
-    InfoComponent
+    InfoComponent,
+    SegundologinScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -48,11 +53,13 @@ import { CursosService } from './servicios/cursos.service';
     NgbModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MomentModule
   ],
   providers: [
     LoginService,
-    CursosService
+    CursosService,
+    BolsaService
   ],
   bootstrap: [AppComponent]
 })
