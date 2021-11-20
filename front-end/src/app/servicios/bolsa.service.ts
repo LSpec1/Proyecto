@@ -25,4 +25,10 @@ export class BolsaService {
     return this.empleos.sort((x,y) => +new Date(y.fecha) - +new Date(x.fecha));
   }
 
+  reloadEmpleos(empleo:empleo):Array<empleo>{
+    let aux = Object.create(empleos);
+    let index = aux.indexOf(empleo);
+    aux.splice(index,1);
+    return aux;
+  }
 }

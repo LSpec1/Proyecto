@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BolsaService } from 'src/app/servicios/bolsa.service';
-import { MomentModule } from 'ngx-moment';
+
 
 @Component({
   selector: 'app-bolsa-screen',
@@ -12,8 +12,8 @@ export class BolsaScreenComponent implements OnInit {
   _bolsa:BolsaService = new BolsaService;
 
   constructor() {
-  }
 
+  }
   ngOnInit(): void {
   }
 

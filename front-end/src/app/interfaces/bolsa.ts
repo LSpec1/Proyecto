@@ -26,7 +26,7 @@ export let empleos: Array<empleo>=[{
     "descripcion": "Lorem ipsum dolor sit amet, consectetuer, adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     "contacto": "1 6817243",
     "correo": "Programsac@gmail.com",
-    "isVerificada": true,
+    "isVerificada": false,
     "salario": "",
     "jornada": "Full time"
   },{

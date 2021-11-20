@@ -1,12 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-8">
+    <div class="col-8 border-right">
       <div class="container border-bottom">
         <div class="media border mb-5 bg-grey rounded">
           <div class="media-body m-5">
             <p class="h3 text-justify">{{empleo?.titulo}}</p>
             <p class="text-justify">{{empleo?.descripcion}}</p>
-
             <div class="container">
               <div class="row">
                 <div class="col-6 d-flex flex-column">
@@ -31,17 +30,33 @@
 
       <div class="container">
         <p class="h3 mt-5 font-weight-bold">Ofertas relacionadas</p>
-          <div class="media border bg-grey rounded mt-5" [routerLink]="['/empleo',empleo._idNoticia]" routerLinkActive="router-link-active" *ngFor="let empleo of empleoSugeridos">
-            <div class="media border ml-3 mt-3" id="media">
+          <div class="media border bg-grey rounded mt-5" (click)="redireccionar(empleo._idNoticia)"  *ngFor="let empleo of empleoSugeridos" id="media">
+            <div class="ml-3 mt-3">
               <div class="media-body">
-                <h1>{{empleo?.titulo}}</h1>
+                <h1>{{empleo.titulo}}</h1>
                 <h3>{{empleo?.empresa}} | {{empleo?.pais}}, {{empleo?.ciudad}}</h3>
                 <footer class="blockquote-footer">Hace {{empleo?.fecha | amLocale:"es" | amTimeAgo:true}}</footer>
               </div>
-              <img class="m-5 rounded align-self-center" style="width:140px; height: 125px;" src="{{empleo?.imagen}}">
             </div>
+            <img class="m-5 rounded" style="width:140px; height: 125px;" src="{{empleo?.imagen}}">
           </div>
       </div>
+    </div>
+    <div class="col-4">
+      <div class="ml-5 card">
+        <img src="{{empleo?.imagen}}">
+        <div class="card-body">
+          <p class="h6 font-weight-bold" *ngIf="empleo?.isVerificada">Empresa Verificada</p>
+          <p class="h6 card-text">{{empleo?.empresa}} | {{empleo?.ciudad}}, {{empleo?.pais}}</p>
+          <p class="h6 card-text"><i class="material-icons">phone</i>+ {{empleo?.contacto}}</p>
+          <p class="h6 card-text"><i class="material-icons">email</i> {{empleo?.correo}}</p>
+          <p class="h6 card-text">Descripción de la empresa</p>
+          <p class="h6 card-text">{{empleo?.descripcion}}</p>
+          <button class="btn border rounded">Recibir notificaciones</button>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </div>
