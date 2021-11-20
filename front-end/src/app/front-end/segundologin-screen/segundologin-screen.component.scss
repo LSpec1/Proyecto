@@ -1,0 +1,68 @@
+form#loginform{
+    display:inline-flexbox
+}
+
+
+li {
+    list-style: none;
+}
+
+// .col-4{
+
+// }
+
+img{
+    filter:grayscale(50%);
+    height : 100%;
+    width: 100%;
+}
+
+input{
+    border-radius: 5px;
+    color: grey;
+}
+
+.recordarcontraseña{
+    color: rgba(128, 128, 128, 0.192);
+}
+
+button {
+    background-color: #313F4F;
+    color: white;
+    border-radius: 5px;
+    border-color: #313F4F;
+}
+
+label#recordarclave{
+    color: grey;
+}
+
+a#recordarclaveinput{
+    color: grey;
+}
+
+a#iniciousuario{
+    color: rgb(2, 2, 2);
+}
+
+a#olvidasteclave{
+    color: grey;
+}
+
+a#inicioempresa {
+    color: black;
+} 
+
+a#sincuenta{
+    color: grey;
+}
+
+button#registrate{
+    background-color: white;
+    color: #313F4F;
+    border-color: #313F4F;
+}
+
+label#terminos{
+    color: grey;
+}

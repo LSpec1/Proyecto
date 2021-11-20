@@ -5,7 +5,14 @@
         </div>
         <div class="col-4">
             <form id="loginform" novalidate>
-                <h1>Inicio de Sesión</h1>
+                <h1>
+                    Inicio de Sesión
+                    <br>
+                    <sub style="color: rgb(81, 83, 199);">
+                        <h5>Empresa-Profesional</h5>
+                    </sub>
+                </h1>
+                <br>
                 <li>
                     <label for="Email">Email</label>
                     <br>
@@ -27,11 +34,11 @@
                 </li>
                 <li>
                     <br>
-                    <button type="submit" title="Ingresar" [routerLink]="['/inicio']" (click)="mandarEstate(1)" name="Ingresar">Iniciar Sesión</button>
+                    <button type="submit" title="Ingresar" [routerLink]="['/empleo']" (click)="mandarEstate(1)" name="Ingresar">Iniciar Sesión</button>
                 </li>
                 <br>
                 <li>
-                    <a id="inicioempresa" href="login2">Iniciar sesión como empresa o profesional</a>
+                    <a id="iniciousuario" href="login">Iniciar sesión como Usuario común</a>
                </li>
                <br>
                <br>

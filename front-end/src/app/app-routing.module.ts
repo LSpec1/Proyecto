@@ -7,6 +7,7 @@ import { BolsaScreenComponent } from './front-end/bolsa/bolsa-screen/bolsa-scree
 import { LoginScreenComponent } from './front-end/login/login-screen/login-screen.component';
 import { RegistrarseScreenComponent } from './front-end/registrarse/registrarse-screen/registrarse-screen.component';
 import { CursoindividualScreenComponent } from './front-end/cursoindividual/cursoindividual-screen/cursoindividual-screen.component';
+import { SegundologinScreenComponent } from './front-end/segundologin-screen/segundologin-screen.component';
 
 const routes: Routes = [
   { path: '', component: LoginScreenComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'bolsa', component: BolsaScreenComponent},
   { path: 'login', component: LoginScreenComponent},
   { path: 'register', component: RegistrarseScreenComponent},
+  { path: 'login2', component: SegundologinScreenComponent},
 ];
 
 @NgModule({

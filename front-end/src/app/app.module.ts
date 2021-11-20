@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms'; //permite [(ngModule)] para input 
 //servicios
 import { LoginService } from './servicios/login.service';
 import { CursosService } from './servicios/cursos.service';
+import { SegundologinScreenComponent } from './front-end/segundologin-screen/segundologin-screen.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { CursosService } from './servicios/cursos.service';
     EmpleoScreenComponent,
     CursosComponent,
     OfertasComponent,
-    InfoComponent
+    InfoComponent,
+    SegundologinScreenComponent
   ],
   imports: [
     BrowserModule,
