@@ -24,7 +24,10 @@ import { FormsModule } from '@angular/forms'; //permite [(ngModule)] para input 
 //servicios
 import { LoginService } from './servicios/login.service';
 import { CursosService } from './servicios/cursos.service';
+import { BolsaService } from './servicios/bolsa.service';
 
+//Modulos externos
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   declarations: [
@@ -48,11 +51,13 @@ import { CursosService } from './servicios/cursos.service';
     NgbModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MomentModule
   ],
   providers: [
     LoginService,
-    CursosService
+    CursosService,
+    BolsaService
   ],
   bootstrap: [AppComponent]
 })
