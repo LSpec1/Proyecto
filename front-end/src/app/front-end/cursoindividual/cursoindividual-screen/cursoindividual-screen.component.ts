@@ -111,7 +111,7 @@ export class CursoindividualScreenComponent implements OnInit {
 
   cursoSeleccionado(id_curso:number) {
     this.router.navigate(['/cursos/curso-individual', id_curso], { queryParams: {'id': id_curso}}).then(()=>{
-      
+      window.location.reload();
     });
   }
 
