@@ -1,0 +1,30 @@
+---Crear un package.json para describir el proyecto y mostrar sus dependencias
+npm init -y
+
+---Instalar typescript como dependencia de desarrollo
+npm i typescript -D
+
+---Crear carpeta llamada ts
+
+---Crear el archivo de conf de typescript, cambiar target a es6 y habilitar outDir
+npx tsc --init
+
+---Convertir los archivos
+npx tsc -w
+
+---Installar express, postgres, cors
+npm i express
+npm i pg
+npm i cors
+
+---Instalar los tipos de datos de express y pg
+npm i @types/express -D
+npm i @types/pg -D
+
+---Installar nodemon para ayudar a reiniciar el servidor cada vez que se cambia codigo
+npm i nodemon -D
+
+---en package.json, en "scripts" dejar lo siguiente y ejecutar con npm run dev
+"dev": "nodemon js/app.js"
+
+---sino, ejecutar con node js/app.js

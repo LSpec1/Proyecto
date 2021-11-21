@@ -20,7 +20,6 @@ export class RegistrarseScreenComponent implements OnInit {
   codigoPaises: string[] = ["AR","BO","CL","CO","CR","CU","EC","PE","UY","VE"]
 
 
-
   formulario:FormGroup;
   estado:boolean = false;
 

@@ -1,0 +1,47 @@
+/* Colores */
+h1#ofertas-destacadas-titulo {
+  margin: 5%;
+  padding-top: 5%;
+  margin-left: 0;
+  font-size: xx-large;
+  margin-top: auto;
+}
+
+#contenedor-ofertas {
+  max-width: 680px;
+  margin-left: 0;
+}
+
+#ofertas {
+  padding-top: 10px;
+  margin-bottom: 20px;
+  background-color: #dfdfdf;
+}
+
+@media (max-width: 800px) {
+  #ofertas {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
+}
+
+@media (min-width: 800px) {
+  .left-column {
+    max-width: 450px;
+  }
+}
+
+.right-column {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#img-ofertas {
+  width: 180px;
+  height: 100px;
+  -webkit-clip-path: circle(60px at center);
+          clip-path: circle(60px at center);
+}
+/*# sourceMappingURL=ofertas.component.css.map */

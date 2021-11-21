@@ -3,17 +3,89 @@ $primario: rgb(223, 223, 223);
 $secundario: rgb(30, 30, 35);
 
 //Clases que cambian con la resolucion
-@media (min-width: 800px) {
+@media (min-width: 900px) {
     .grid {
         display: grid;
-        grid-template-columns: 2fr 3fr; //2 columnas
+        grid-template-columns: 1fr 655px; //2 columnas
         gap: 30px;
     }
+    .filtros {
+        border-right: 2px solid $primario;
+        padding-right: 50px;
+    }
+    .listaCursos {
+        display: flex;
+        flex-wrap: wrap;
+        /* max-width: 228px; */
+        /* grid-gap: 10px; */
+        gap: 50px;
+    }
 }
-@media (max-width: 800px) {
+@media (max-width: 1300px) {
+    .listaCursos {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 900px) {
     .grid {
         display: grid;
         grid-template-columns: 1fr;  //1 columna
         gap: 30px;
     }
+}
+
+//Seccion filtros
+.filtros {
+    display: grid;
+    grid-template-rows: repeat(9, max-content);
+}
+.boton-custom {
+    border: 1px solid $secundario;
+}
+.container-busqueda {
+    display: grid;
+    grid-template-rows: 40px 120px;
+}
+.container-busqueda form input {
+    width: auto;
+}
+.container-filtros-checkboxes{
+    display: grid;
+}
+.container-checkbox {
+    display: grid;
+    gap: 10px;
+    margin-left: 20px;
+}
+.checkbox label {
+    color: $secundario;
+    margin-left: 10px;
+}
+.titulo-filtros {
+    font-size: xx-large;
+    margin-bottom: calc(30px + 4%);
+}
+
+//Seccion cursos
+.cursos {
+    display: grid;
+    grid-template-rows: 90px;
+}
+.listaCursos .card{
+    background-color: $primario;
+}
+#carta-cuerpo {
+    display: grid;
+    grid-template-rows: 32px 16px;
+    padding-top: 10px;
+}
+.titulo-cursos {
+    font-size: xx-large;
+}
+.cursos .card .card-body:hover {
+    background-color: rgb(148, 148, 148);
+}
+.cursos .card .tematica {
+    margin-bottom: -20px;
 }

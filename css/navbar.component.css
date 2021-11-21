@@ -1,1 +1,48 @@
-/* No CSS *//*# sourceMappingURL=navbar.component.css.map */
+/* Configuracion de colores navbar */
+/* Configuracion para los links */
+/* Clases */
+.navbar-colores {
+  color: #dfdfdf;
+  background-color: #1e1e23;
+}
+
+a {
+  color: #dfdfdf;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #dfdfdf;
+}
+
+#logo {
+  width: 180px;
+  height: 80px;
+  -o-object-fit: none;
+     object-fit: none;
+}
+
+ul#links {
+  font-size: medium;
+  border-right: 1px solid #dfdfdf;
+  margin-right: 2%;
+}
+
+#links li {
+  margin-inline: 10px;
+}
+
+.navbar-padding {
+  padding-inline: 5%;
+}
+
+.form-inline {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 13px;
+}
+
+.margen-text {
+  margin-right: 8px;
+}
+/*# sourceMappingURL=navbar.component.css.map */

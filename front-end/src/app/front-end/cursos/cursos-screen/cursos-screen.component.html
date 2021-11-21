@@ -1,4 +1,57 @@
 <div class="grid">
-    <app-cursos-filtros></app-cursos-filtros>
-    <app-cursos-disponibles></app-cursos-disponibles>
+    <div class="filtros">
+        <div class="container-busqueda">
+            <h1 class="titulo-filtros">Filtrar por:</h1>
+            <form class="form-inline mt-4">
+                <input class="form-control mr-sm-2 margen-text" type="search" placeholder="Buscar curso" id="campoBuscar">
+                <input type="submit" class="btn boton-custom my-2 my-sm-0 btnBuscar" (click)="buscar()" value="Buscar">
+            </form>
+        </div>
+        <h3 class="mt-2">Tematica</h3>
+        <div class="container-checkbox" *ngFor="let tematica of tematicasCheckbox">
+            <div class="checkbox">
+                <input type="checkbox" [(ngModel)]="tematica.select" class="checkbox" name="{{tematica.nombre}}">
+                <label for="{{tematica.nombre}}">{{tematica.nombre}}</label>
+            </div>
+        </div>
+        <h3 class="mt-4">Duracion</h3>
+        <div class="container-checkbox" *ngFor="let duracion of duracionesCheckbox">
+            <div class="checkbox">
+                <input type="checkbox" [(ngModel)]="duracion.select" class="checkbox" name="{{duracion.modulos}}">
+                <label for="{{duracion.modulos">{{duracion.modulos}} Módulos</label>
+            </div>
+        </div>
+    </div>
+    <div class="cursos">
+        <h1 class="titulo-cursos">Cursos disponibles</h1>
+        <div class="listaCursos">
+            <ng-container *ngFor="let video of listaCursos">
+                <!--Solo seleccionar los videos de id = 1 y modulo = 1, para obtener el primer video del los curso-->
+                <div *ngIf="(video.id_video_curso == 1) && (video.modulo == 1) && filtrar()">
+                    <div class="card {{video.curso}}" (click)=cursoSeleccionado(video.id_curso)>
+                        <!--Opciones de video-->
+                        <iframe
+                            src="https://www.youtube.com/embed/AEiRa5xZaZw"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                        <!--Cuerpo-->
+                        <div class="card-body" id="carta-cuerpo">
+                            <div class="card-tittle">
+                                <h3 id="carta-titulo">{{video.titulo}}</h3>
+                            </div>
+                            <div class="card-text">
+                                <h4 class="carta-texto">{{video.total}} Módulos</h4>
+                            </div>
+                        </div>
+                        <div class="tematica" style="visibility: hidden;">
+                            {{video.curso}}
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
 </div>

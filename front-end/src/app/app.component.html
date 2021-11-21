@@ -4,7 +4,7 @@
 <!--    mirar el id de los ngif y corregir la condicion   -->
 <!---------------------------------------------------------->
 
-<div *ngIf="!loginEstate" id="loginTrue">
+<div *ngIf="loginEstate" id="loginTrue">
     <app-navbar></app-navbar>
     <!--Bordes laterales y color de texto-->
     <div class="cuerpo-detras bg-secundario text-terciario">
@@ -14,7 +14,7 @@
     </div>
 </div>
 
-<div *ngIf="loginEstate" id="loginFalse">
+<div *ngIf="!loginEstate" id="loginFalse">
     <app-login-screen></app-login-screen>
 </div>
 

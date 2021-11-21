@@ -16,6 +16,7 @@ $terciario: rgb(30, 30, 35);
 .cuerpo-detras {
     background-color: $secundario;
     @include medidas;
+    min-width: max-content;
 }
 
 .cuerpo-delante {
