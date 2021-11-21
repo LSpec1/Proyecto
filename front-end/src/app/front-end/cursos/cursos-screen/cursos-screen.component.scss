@@ -83,3 +83,9 @@ $secundario: rgb(30, 30, 35);
 .titulo-cursos {
     font-size: xx-large;
 }
+.cursos .card .card-body:hover {
+    background-color: rgb(148, 148, 148);
+}
+.cursos .card .tematica {
+    margin-bottom: -20px;
+}

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioScreenComponent } from './front-end/inicio/inicio-screen/inicio-screen.component';
 import { CertificadosScreenComponent } from './front-end/certificados/certificados-screen/certificados-screen.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'inicio', component: InicioScreenComponent},
   { path: 'certificados', component: CertificadosScreenComponent},
   { path: 'cursos', component: CursosScreenComponent},
-  { path: 'cursos/curso-individual', component: CursoindividualScreenComponent},
+  { path: 'cursos', component: CursoindividualScreenComponent, children: [{ path: 'curso-individual/:id_curso', component: CursoindividualScreenComponent}]},
   { path: 'bolsa', component: BolsaScreenComponent},
   { path: 'login', component: LoginScreenComponent},
   { path: 'register', component: RegistrarseScreenComponent},

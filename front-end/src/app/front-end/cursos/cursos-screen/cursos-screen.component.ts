@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CursosService } from 'src/app/servicios/cursos.service';
-import { Video_Curso } from 'src/app/interfaces/video';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cursos-screen',
   templateUrl: './cursos-screen.component.html',
-  styleUrls: ['./cursos-screen.component.scss']
+  styleUrls: ['./cursos-screen.component.scss'],
 })
 export class CursosScreenComponent implements OnInit {
 
@@ -33,12 +33,17 @@ export class CursosScreenComponent implements OnInit {
     {id: 3, modulos: 4, select: false}
   ];
 
-  constructor(private _cursos:CursosService) {
+  constructor(private _cursos:CursosService, private router: Router, private routeA: ActivatedRoute) {
     this.listaCursos = _cursos.getListaVideos();
   }
 
   ngOnInit(): void {
     
+  }
+
+  //Al seleccionar un curso, se redirige a curso individual
+  cursoSeleccionado(id_curso:number) {
+    this.router.navigate(['/cursos/curso-individual', id_curso], { queryParams: {'id': id_curso}});
   }
 
   /* Se envia al servicio de filtros dos arrays y un string */
