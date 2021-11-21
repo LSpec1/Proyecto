@@ -78,7 +78,7 @@
                         allowfullscreen>
                     </iframe>
                     <!--Cuerpo-->
-                    <div class="card-body">
+                    <div class="card-body" (click)="cursoSeleccionado(video.id_curso)">
                         <div class="card-tittle">
                             <h3 id="carta-titulo">
                                 Módulo {{video.modulo}}: Clase: {{video.id_video_curso}}

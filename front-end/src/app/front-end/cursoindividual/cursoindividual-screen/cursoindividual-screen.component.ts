@@ -109,6 +109,12 @@ export class CursoindividualScreenComponent implements OnInit {
     return result;
   }
 
+  cursoSeleccionado(id_curso:number) {
+    this.router.navigate(['/cursos/curso-individual', id_curso], { queryParams: {'id': id_curso}}).then(()=>{
+      
+    });
+  }
+
   agregarComentarios():any[]{
     let comentarios: any[] = [
       { 
