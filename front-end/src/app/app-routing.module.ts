@@ -11,8 +11,8 @@ import { EmpleoScreenComponent } from './front-end/empleo/empleo-screen/empleo-s
 import { SegundologinScreenComponent } from './front-end/segundologin-screen/segundologin-screen.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginScreenComponent},
-  { path: '', component: InicioScreenComponent},
+  { path: '', component: LoginScreenComponent},
+  { path: 'inicio', component: InicioScreenComponent},
   { path: 'certificados', component: CertificadosScreenComponent},
   { path: 'cursos', component: CursosScreenComponent},
   { path: 'cursos', component: CursoindividualScreenComponent, children: [{ path: 'curso-individual/:id_curso', component: CursoindividualScreenComponent}]},
