@@ -64,11 +64,35 @@ $secundario: rgb(30, 30, 35);
 .video-container .card {
     height: 300px;
 }
-.video-container .card-body {
-    //padding-top: 80px;
-}
 .video-container iframe {
     height: 300px;
+}
+.video-container .navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.video-container .navegacion .nodo {
+    width: 30px;
+    height: 30px;
+    border: 20px solid $secundario;
+    border-radius: 100%;
+}
+.video-container .navegacion .seleccionado {
+    width: 40px;
+    height: 40px;
+    border: 5px solid $secundario;
+    border-radius: 100%;
+}
+.video-container .navegacion .seleccionado:hover { border: 5px solid $primario}
+.video-container .navegacion .nodo:hover { border: 20px solid $primario }
+
+.video-container .navegacion .separador {
+    width: 36px;
+    height: 1px;
+    border: 4px solid $secundario;
+    border-radius: 10%;
 }
 
 .sidebar .casilla-comentario {

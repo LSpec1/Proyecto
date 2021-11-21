@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CursosService } from 'src/app/servicios/cursos.service';
 import { Video_Curso } from 'src/app/interfaces/video';
 import { ActivatedRoute, Router } from '@angular/router';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Component({
   selector: 'app-cursoindividual-screen',
@@ -16,6 +17,7 @@ export class CursoindividualScreenComponent implements OnInit {
   id_curso: any;
 
   videos: Video_Curso[] = [];
+  videosCurso: Video_Curso[] = [];
   videoSeleccionado: Video_Curso = {  id_curso: 0,
                                       curso: "",
                                       id_video_curso: 0,
@@ -30,28 +32,59 @@ export class CursoindividualScreenComponent implements OnInit {
     this.videos = _cursos.getListaVideos();
     this.id_curso = this.route.snapshot.queryParams['id']; //parametro
     //console.log("curso: "+this.id_curso);
+    this.videoSeleccionado = this.obtenerVideoCurso(this.id_curso, 1);
+    this.videosCurso = this.obtenerVideosCurso(this.id_curso);
+    //Los videos relacionados al siguiente curso
+    this.videosRelacionados.push(this.getRelacionado(this.id_curso));
+    this.videosRelacionados.push(this.videos[2]);
+    this.comentarios = this.agregarComentarios();
   }
 
   ngOnInit(): void {
-    this.videoSeleccionado = this.obtenerVideoCurso(this.id_curso);
-    console.log(this.videoSeleccionado);
-    this.videosRelacionados.push(this.videos[1]);
-    this.videosRelacionados.push(this.videos[2]);
-    this.comentarios = this.agregarComentarios();
   }
 
   ngOnDestroy() {
     
   }
 
-  obtenerVideoCurso(id_curso:any):Video_Curso{
+  siguienteVideo(id_video_curso:number, modulo:number) {
+    //Actualizamos los datos
+    this.videoSeleccionado = this.obtenerVideoCurso(id_video_curso, modulo);
+    //Los videos relacionados al siguiente curso
+    this.comentarios = this.agregarComentarios();
+    console.log("Siguiente: id="+id_video_curso+", modulo="+modulo);
+  }
+
+  esUltimoVideo(video:Video_Curso, indice:number){
+    const ultimoIndice = this.videosCurso.length;
+    indice = indice+1;
+
+    if (ultimoIndice == indice) {
+      return true
+    } else {
+      return false;
+    }
+  }
+
+  getRelacionado(id:number):Video_Curso {
+    let result: Video_Curso;
+    if (this.videos[this.id_curso+1]) { //si existe un curso siguiente
+      result = this.videos[this.id_curso+1]
+    } else { //si no, selecciona un video del mismo curso
+      result = this.videos[this.id_curso];
+    }
+    return result;
+  }
+
+  obtenerVideoCurso(id:any, modulo:any):Video_Curso{
+    
     for (let i = 0; i < this.videos.length; i++) {
       const element:Video_Curso = this.videos[i];
-      if (element.id_curso == id_curso && element.id_video_curso == 1) {
+      if (element.id_video_curso == id && element.modulo == modulo) {
         return element;
       }
     }
-
+    //caso contrario
     let aux:Video_Curso = { id_curso: -1,
                             curso: "",
                             id_video_curso: 0,
@@ -59,8 +92,21 @@ export class CursoindividualScreenComponent implements OnInit {
                             total: 0,
                             titulo: '',
                             link: '' };
-
     return aux;
+  }
+
+  obtenerVideosCurso(id_curso:any){
+    let result:Video_Curso[] = [];
+
+    //obtener todos los videos del curso
+    for (let i = 0; i < this.videos.length; i++) {
+      const element:Video_Curso = this.videos[i];
+      if (element.id_curso == id_curso) {
+        result.push(element);
+      }
+    }
+    
+    return result;
   }
 
   agregarComentarios():any[]{

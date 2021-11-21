@@ -16,8 +16,47 @@ export class CursosService {
       total: 4,
       titulo:"Curso de programación en JS",
       link:"https://www.youtube.com/watch?v=AEiRa5xZaZw"
-    },
-    {
+    },{
+      id_curso: 1,
+      curso:"Programación",
+      id_video_curso: 2,
+      modulo: 1,
+      total: 4,
+      titulo:"Curso de programación en JS",
+      link:"https://www.youtube.com/watch?v=AEiRa5xZaZw"
+    },{
+      id_curso: 1,
+      curso:"Programación",
+      id_video_curso:3,
+      modulo: 1,
+      total: 4,
+      titulo:"Curso de programación en JS",
+      link:"https://www.youtube.com/watch?v=AEiRa5xZaZw"
+    },{
+      id_curso: 1,
+      curso:"Programación",
+      id_video_curso: 1,
+      modulo: 2,
+      total: 4,
+      titulo:"Curso de programación en JS",
+      link:"https://www.youtube.com/watch?v=AEiRa5xZaZw"
+    },{
+      id_curso: 1,
+      curso:"Programación",
+      id_video_curso: 2,
+      modulo: 2,
+      total: 4,
+      titulo:"Curso de programación en JS",
+      link:"https://www.youtube.com/watch?v=AEiRa5xZaZw"
+    },{
+      id_curso: 1,
+      curso:"Programación",
+      id_video_curso: 1,
+      modulo: 3,
+      total: 4,
+      titulo:"Curso de programación en JS",
+      link:"https://www.youtube.com/watch?v=AEiRa5xZaZw"
+    },{
       id_curso: 2,
       curso:"Diseño",
       id_video_curso:1,

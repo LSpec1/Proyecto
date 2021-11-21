@@ -1,6 +1,19 @@
 <div class="grid">
     <div class="video-container">
         <h1 class="titulo">Curso de {{videoSeleccionado.curso}}</h1>
+        <div class="navegacion">
+            <ng-container *ngFor="let video of videosCurso; index as i">
+                <div *ngIf="video != videoSeleccionado" (click)="siguienteVideo(video.id_video_curso, video.modulo)">
+                    <div class="nodo"></div>
+                </div>
+                <div *ngIf="video == videoSeleccionado" (click)="siguienteVideo(video.id_video_curso, video.modulo)">
+                    <div class="seleccionado"></div>
+                </div>
+                <div *ngIf="!esUltimoVideo(video, i)">
+                    <div class="separador"></div>
+                </div>
+            </ng-container>
+        </div>
         <!--Opciones de video-->
         <div class="card {{videoSeleccionado.curso}}">
             <!--Opciones de video-->
