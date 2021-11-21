@@ -38,7 +38,7 @@ export class CursosScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
 
   //Al seleccionar un curso, se redirige a curso individual
@@ -52,7 +52,7 @@ export class CursosScreenComponent implements OnInit {
     //obtenemos todos los filtros que tengan la varible select en true
     this.filtroTematica = this.getTematicas();
     this.filtroDuraciones = this.getDuraciones();
-    this.filtroBuscar = campo.value;  
+    this.filtroBuscar = campo.value;
     //console.log(this.filtros);
     console.log("Filtros seleccionados: ", this.filtroTematica, this.filtroDuraciones, this.filtroBuscar);
   }
@@ -83,7 +83,7 @@ export class CursosScreenComponent implements OnInit {
 
   filtrar() {
     this.revelarTodo();
-    
+
     //Las banderas nos ayudaran a saber cuando hay que revelar todo
     let flag1:boolean = true;
     let flag2:boolean = true;
@@ -91,7 +91,7 @@ export class CursosScreenComponent implements OnInit {
 
     //Recorrer array de tematicas
     if (this.filtroTematica.length > 0) {
-      
+
       flag1 = false;
       for (let i = 0; i < this.filtroTematica.length; i++) {
 
@@ -100,11 +100,11 @@ export class CursosScreenComponent implements OnInit {
 
         //obtenemos todas las cartas
         let item:any = document.getElementsByClassName('card');
-        
+
         for (let j = 0; j < item.length; j++) {
           const itemTematica = document.getElementsByClassName('tematica')[j].innerHTML;
           console.log(document.getElementsByClassName('tematica')[0].innerHTML.includes(tematica));
-           
+
           if (!itemTematica.includes(tematica)) {
             this.ocultar(item[j]);
           } else {
@@ -122,7 +122,7 @@ export class CursosScreenComponent implements OnInit {
 
         //obtenemos todas las cartas
         let item:any = document.getElementsByClassName('card');
-        
+
         for (let j = 0; j < item.length; j++) {
           //obtenemos el string donde se ubica el valor
           let valor:string = document.getElementsByClassName('carta-texto')[j].innerHTML;
@@ -143,7 +143,7 @@ export class CursosScreenComponent implements OnInit {
     //los elementos están pero invisibles
     return true;
   }
-  
+
   ocultar(element:HTMLElement){
     element.style.visibility = 'hidden';
     element.style.display = 'none';
