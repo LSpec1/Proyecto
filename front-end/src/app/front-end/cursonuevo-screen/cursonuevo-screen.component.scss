@@ -1,0 +1,81 @@
+/*
+ * IMPORTANTE
+ * Para las opciones de media:
+ * min-width 800px se utiliza para el tamaño normal de un monitor
+ * max-widt 800px se utiliza para el tamaño normal de un celular
+ *
+*/
+
+/* Colores */
+$primario: rgb(223, 223, 223);
+$secundario: rgb(30, 30, 35);
+
+// Cuerpo
+#seccion-cursos-titulo {
+    margin-bottom: 10%;
+    font-size:xx-large;
+    margin-top: auto;
+}
+@media (min-width: 800px) {
+   #container-cuerpo {
+       margin: 50px;
+  }
+}
+ //Cartas
+#carta-cuerpo {
+    background-color: $primario;
+}
+/* Resolucion video */
+@media (min-width: 801px) {
+    #video-curso {
+        width: 220px;
+        height: 170px;
+    }
+    .container-cuerpo {
+        margin-left: 4%
+    }
+}
+@media (max-width: 800px) {
+    #video-curso {
+        width: 211px;
+        height: 180px;
+    }
+}
+
+//Ajuste de carta
+@media (max-width: 800px) {
+    #container-cartas {
+        display: inline-flex !important;
+    }
+}
+
+#container-cartas {
+    width: auto;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
+#carta-titulo {
+    margin-bottom: 0;
+}
+#carta-texto {
+    margin-bottom: 0;
+}
+.carta-conf {
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+// Botones|
+#boton-buscar-otro {
+    color: $primario;
+    background-color: $secundario;
+    margin: auto;
+}
+#boton-comenzar-curso {
+    color: $primario;
+    background-color: $secundario;
+}
+a {
+    color: $primario;
+    text-decoration: none;
+}

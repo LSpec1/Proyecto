@@ -26,6 +26,7 @@ import { InfoComponent } from './front-end/inicio/info/info.component';
 import { LoginService } from './login.service';
 import { FiltrosComponent } from './front-end/cursos/filtros/filtros.component';
 import { CursosDisponiblesComponent } from './front-end/cursos/cursos-disponibles/cursos-disponibles.component';
+import { CursonuevoScreenComponent } from './front-end/cursonuevo-screen/cursonuevo-screen.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { CursosDisponiblesComponent } from './front-end/cursos/cursos-disponible
     OfertasComponent,
     InfoComponent,
     FiltrosComponent,
-    CursosDisponiblesComponent
+    CursosDisponiblesComponent,
+    CursonuevoScreenComponent
 
   ],
   imports: [
