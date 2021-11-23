@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=z4BNZfZ1Wq8&t
+
 ---Crear un package.json para describir el proyecto y mostrar sus dependencias
 npm init -y
 
