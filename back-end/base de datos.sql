@@ -1,12 +1,12 @@
 CREATE DATABASE Contenidos;
 
 CREATE TABLE personas (
-	id int not null generated always as identity,
+	id int not null,
 	nombre varchar(50)
 );
 
 CREATE TABLE cursos (
-	id int not null generated always as identity,
+	id int not null,
 	id_profesor int not null,
 	nombre varchar(100),
 	total_modulos int not null,
@@ -14,7 +14,6 @@ CREATE TABLE cursos (
 );
 
 CREATE TABLE videos (
-	id int not null generated always as identity,
 	id_curso int not null,
 	id_video_curso int not null,
 	modulo int not null,
@@ -24,7 +23,7 @@ CREATE TABLE videos (
 );
 
 CREATE TABLE tipos_cursos (
-	id int not null generated always as identity,
+	id int not null,
 	tipo varchar(150)
 );
 insert into tipos_cursos(tipo) values ('Programación'), ('Humanidades'), ('Diseño');
