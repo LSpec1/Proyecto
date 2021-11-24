@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createVideo = exports.getVideoById = exports.getVideos = void 0;
+exports.editVideo = exports.deleteVideo = exports.createVideo = exports.getVideoCursoById = exports.getVideos = void 0;
 const database_1 = require("../../database");
 const getVideos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -22,12 +22,14 @@ const getVideos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.getVideos = getVideos;
-const getVideoById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const id = parseInt(req.params.id);
-    const response = yield database_1.pool.query('SELECT * FROM videos WHERE id = $1', [id]);
+const getVideoCursoById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const id_curso = parseInt(req.params.id_curso);
+    const id_video_curso = parseInt(req.params.id_video_curso);
+    //console.log(req.params);
+    const response = yield database_1.pool.query('SELECT * FROM videos WHERE id_curso = $1 AND id_video_curso = $2 ORDER BY id_curso, modulo, id_video_curso', [id_curso, id_video_curso]);
     return res.json(response.rows);
 });
-exports.getVideoById = getVideoById;
+exports.getVideoCursoById = getVideoCursoById;
 const createVideo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id_curso, id_video_curso, modulo, titulo, link } = req.body;
@@ -51,3 +53,18 @@ const createVideo = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     }
 });
 exports.createVideo = createVideo;
+const deleteVideo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const id_curso = parseInt(req.params.id_curso);
+    const id_video_curso = parseInt(req.params.id_video_curso);
+    const response = yield database_1.pool.query('DELETE FROM videos WHERE id_curso = $1 AND id_video_curso = $2', [id_curso, id_video_curso]);
+    res.json(`Video curso: ${id_curso}, id: ${id_video_curso} eliminado`);
+});
+exports.deleteVideo = deleteVideo;
+const editVideo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const id_curso = parseInt(req.params.id_curso);
+    const id_video_curso = parseInt(req.params.id_video_curso);
+    const { modulo, titulo, link } = req.body;
+    const response = yield database_1.pool.query('UPDATE videos SET id_curso = $1, id_video_curso = $2, modulo = $3, titulo = $4, link = $5 WHERE id_curso = $1 AND id_video_curso = $2', [id_curso, id_video_curso, modulo, titulo, link]);
+    res.json(`Video curso: ${id_curso}, id: ${id_video_curso} editado`);
+});
+exports.editVideo = editVideo;

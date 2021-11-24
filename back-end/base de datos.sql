@@ -26,7 +26,6 @@ CREATE TABLE tipos_cursos (
 	id int not null,
 	tipo varchar(150)
 );
-insert into tipos_cursos(tipo) values ('Programación'), ('Humanidades'), ('Diseño');
 
 --Para importar un archivo excel.csv - COPY videos from 'C:\bd.csv' CSV delimiter ',' header encoding 'Latin1';
 --Para exportar un archivo excel.csv - COPY videos to 'C:\bd.csv' CSV delimiter ',' header encoding 'Latin1';
