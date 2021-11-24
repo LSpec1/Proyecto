@@ -1,0 +1,20 @@
+id_curso,id_video_curso,modulo,titulo,link
+1,1,1,Curso de programación en JS,https://www.youtube.com/watch?v=AEiRa5xZaZw
+1,2,1,Curso de programación en TS,https://www.youtube.com/watch?v=AEiRa5xZaZw
+1,3,2,Curso de programación en NODE.JS,https://www.youtube.com/watch?v=AEiRa5xZaZw
+1,4,2,Curso de programación en NODE,https://www.youtube.com/watch?v=AEiRa5xZaZw
+1,5,3,Curso de programación en Express,https://www.youtube.com/watch?v=AEiRa5xZaZw
+1,6,4,Curso de programación en Java,https://www.youtube.com/watch?v=AEiRa5xZaZw
+2,1,1,Curso de diseño web,https://www.youtube.com/embed/4dKuDEWEAmo
+2,2,1,Curso de diseño grafico,https://www.youtube.com/embed/4dKuDEWEAmo
+2,3,2,Curso de diseño,https://www.youtube.com/embed/4dKuDEWEAmo
+5,1,1,Curso de Desarrollo de Videojuegos,https://www.youtube.com/embed/4dKuDEWEAmo
+5,2,1,Curso de Desarrollo de Videojuegos web,https://www.youtube.com/embed/4dKuDEWEAmo
+5,3,2,Curso de Desarrollo de Videojuegos java,https://www.youtube.com/embed/4dKuDEWEAmo
+5,4,3,Curso de Desarrollo de Videojuegos c++,https://www.youtube.com/embed/4dKuDEWEAmo
+5,5,3,Curso de Desarrollo de Videojuegos Web,https://www.youtube.com/embed/4dKuDEWEAmo
+6,1,1,Curso de Humanidades,https://www.youtube.com/embed/4dKuDEWEAmo
+6,2,1,Curso de Humanidades II,https://www.youtube.com/embed/4dKuDEWEAmo
+6,3,2,Curso de Humanidades III,https://www.youtube.com/embed/4dKuDEWEAmo
+6,4,2,Curso de Humanidades VI,https://www.youtube.com/embed/4dKuDEWEAmo
+1,7,3,Nuevo video !,https://www.youtube.com/watch?v=L1oMLsiMusQ&list=PLyvsggKtwbLX9LrDnl1-K6QtYo7m0yXWB
