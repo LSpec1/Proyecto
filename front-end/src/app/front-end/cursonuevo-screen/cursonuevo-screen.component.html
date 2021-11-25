@@ -2,9 +2,8 @@
     <h1 id="seccion-cursos-titulo">Contenido de Este Curso</h1>
     <div class="container d-flex " id="container-cartas">
         <!--Tarjetas de video -->
-        <div *ngFor="let carta of cartas">
-            <div class="card bg-secundario carta-conf">
-                <div class="container row">
+        <div *ngFor="let carta of cartas" id="nd">
+            <div class="card bg-secundario carta-conf" id="vid">
                     <!--Cuerpo-->
                     <div class="card-body" id="carta-cuerpo">
                         <!--Opciones de video-->
@@ -16,29 +15,30 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                         </iframe>
-                        <div class="card-tittle">
-                            <h3 id="carta-titulo">{{carta.titulo}}</h3>
-                        </div>
-                        <br>
-                        <div class="card-text">
-                            <h4 id="carta-texto">{{carta.texto}}</h4>
-                            <h4 id="carta-texto">{{carta.texto1}}</h4>
-                            <br>
-                            <h4 id="carta-texto">{{carta.texto2}}</h4>
-                            <h4 id="carta-texto">{{carta.texto3}}</h4>
+                        <div class="containertext">
+                            <div class="card-tittle">
+                                <h3 id="carta-titulo">{{carta.titulo}}</h3>
+                            </div>
+                        
+                            <div class="card-text">
+                                <h4 id="carta-texto">{{carta.texto}}</h4>
+                                <h4 id="carta-texto">{{carta.texto1}}</h4>
+                                <br>
+                                <h4 id="carta-texto">{{carta.texto2}}</h4>
+                                <h4 id="carta-texto">{{carta.texto3}}</h4>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
     
-    <div class="container my-2" >
+    <div class="container botones" >
             <button type="button" class="btn btn btn-secondary" id="boton-buscar-otro">
-                <a [routerLink]="['/cursonuevo']">Buscar otro curso</a>
+                <a [routerLink]="['/cursos']">Buscar otro curso</a>
             </button>
-            <button type="button" class="btn btn btn-secondary" id="boton-comenzar-curso">
-                <a [routerLink]="['/cursonuevo']">Comenzar este curso</a>
+            <button type="button" (click)=cursoSeleccionado(1) class="btn btn btn-secondary botton" id="boton-comenzar-curso">
+                <a >Comenzar este curso</a>
             </button>
     </div>
 </div>

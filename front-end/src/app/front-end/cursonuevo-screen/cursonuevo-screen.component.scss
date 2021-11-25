@@ -79,3 +79,32 @@ a {
     color: $primario;
     text-decoration: none;
 }
+.curso-nuevo{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr;
+}
+
+div#nd{
+    min-width: -webkit-fill-available;
+}
+#vid{
+    display:grid;
+    grid-template-columns: 1fr;
+}
+#carta-cuerpo{
+    display:grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1fr;
+    gap:10px;
+}
+.card-text{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.botones{
+   text-align: center;
+}
+.botton{
+    margin:20px;
+}
