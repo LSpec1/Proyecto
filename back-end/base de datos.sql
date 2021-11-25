@@ -27,5 +27,11 @@ CREATE TABLE tipos_cursos (
 	tipo varchar(150)
 );
 
+CREATE VIEW videos_cursos as
+select v.id_curso, c.nombre as curso, v.id_video_curso, v.modulo, c.total_modulos as total, v.titulo, v.link
+from videos as v, cursos as c
+where v.id_curso = c.id
+order by v.id_curso, v.modulo, v.id_video_curso
+
 --Para importar un archivo excel.csv - COPY videos from 'C:\bd.csv' CSV delimiter ',' header encoding 'Latin1';
 --Para exportar un archivo excel.csv - COPY videos to 'C:\bd.csv' CSV delimiter ',' header encoding 'Latin1';

@@ -4,7 +4,7 @@ import { pool } from '../../database'
 
 export const getVideos = async (req: Request, res: Response): Promise<Response>=> {
     try {
-        const response = await pool.query('SELECT * FROM videos ORDER BY id_curso');
+        const response = await pool.query('SELECT * FROM videos_cursos');
         return res.status(200).json(response.rows);
     } catch(e) {
         console.log(e);

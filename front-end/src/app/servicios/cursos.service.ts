@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Video_Curso } from '../interfaces/video';
+import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment'
+import { HttpClient, HttpClientModule } from '@angular/common/http'; //importante para backend -> frontend
 
 @Injectable({
   providedIn: 'root'
@@ -121,7 +124,11 @@ export class CursosService {
     }
   ];
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  getVideos():Observable<any> {
+    return this.http.get(`${environment.hostname}/videos`);
+  }
 
   aux: any[] = [];
   mostrarLista(lista:any[]){

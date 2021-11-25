@@ -19,9 +19,9 @@ import { EmpleoScreenComponent } from './front-end/empleo/empleo-screen/empleo-s
 import { CursosComponent } from './front-end/inicio/cursos/cursos.component';
 import { OfertasComponent } from './front-end/inicio/ofertas/ofertas.component';
 import { InfoComponent } from './front-end/inicio/info/info.component';
-import { FormsModule } from '@angular/forms'; //permite [(ngModule)] para input html -> typescript
 import { SegundologinScreenComponent } from './front-end/segundologin-screen/segundologin-screen.component';
 import { CursonuevoScreenComponent } from './front-end/cursonuevo-screen/cursonuevo-screen.component';
+
 //servicios
 import { LoginService } from './servicios/login.service';
 import { CursosService } from './servicios/cursos.service';
@@ -29,6 +29,8 @@ import { BolsaService } from './servicios/bolsa.service';
 
 //Modulos externos
 import { MomentModule } from 'ngx-moment';
+import { FormsModule } from '@angular/forms'; //permite [(ngModule)] para input html -> typescript
+import { HttpClientModule } from '@angular/common/http'; //Permite el traspaso de back-end -> Front-end
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { MomentModule } from 'ngx-moment';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    MomentModule
+    MomentModule,
+    HttpClientModule
   ],
   providers: [
     LoginService,
