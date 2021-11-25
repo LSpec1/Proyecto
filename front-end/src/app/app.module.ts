@@ -21,7 +21,7 @@ import { OfertasComponent } from './front-end/inicio/ofertas/ofertas.component';
 import { InfoComponent } from './front-end/inicio/info/info.component';
 import { FormsModule } from '@angular/forms'; //permite [(ngModule)] para input html -> typescript
 import { SegundologinScreenComponent } from './front-end/segundologin-screen/segundologin-screen.component';
-
+import { CursonuevoScreenComponent } from './front-end/cursonuevo-screen/cursonuevo-screen.component';
 //servicios
 import { LoginService } from './servicios/login.service';
 import { CursosService } from './servicios/cursos.service';
@@ -45,7 +45,8 @@ import { MomentModule } from 'ngx-moment';
     CursosComponent,
     OfertasComponent,
     InfoComponent,
-    SegundologinScreenComponent
+    SegundologinScreenComponent,
+    CursonuevoScreenComponent
   ],
   imports: [
     BrowserModule,
