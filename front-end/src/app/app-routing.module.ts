@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'empleo/:id', component: EmpleoScreenComponent},
   { path: 'empleo', component: EmpleoScreenComponent},
   { path: 'login2', component: SegundologinScreenComponent},
+  { path: 'login', component: LoginScreenComponent},
   {path: 'cursonuevo', component: CursonuevoScreenComponent}
  
 ];
