@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-cursonuevo-screen',
   templateUrl: './cursonuevo-screen.component.html',
@@ -31,9 +31,15 @@ export class CursonuevoScreenComponent implements OnInit {
     }
   ]
   
-  constructor() { }
-
+  constructor(private router:Router) { 
+  }
+  
   ngOnInit(): void {
   }
+  //Al seleccionar un curso, se redirige a curso individual
+  cursoSeleccionado(id_curso:number) {
+    this.router.navigate(['/cursos/curso-individual', id_curso], { queryParams: {'id': id_curso}});
+  }
+
 
 }
