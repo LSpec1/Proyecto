@@ -1,6 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CursosService } from 'src/app/servicios/cursos.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Video_Curso } from 'src/app/interfaces/video';
 
 @Component({
   selector: 'app-cursos-screen',
@@ -10,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CursosScreenComponent implements OnInit {
 
   //Variable que almacena lo obtenido en el servicio cursos
-  listaCursos: any[] = [];
+  listaCursos = new Array<Video_Curso>();
 
   //Variables de filtros
   filtroTematica: any[] = [];
@@ -22,7 +24,7 @@ export class CursosScreenComponent implements OnInit {
 
   //Variables que almacenana los checkboxes
   tematicasCheckbox = [
-    {id: 1, nombre: "Programación", select: false},
+    {id: 1, nombre: "Programacion", select: false},
     {id: 2, nombre: "Diseño", select: false},
     {id: 3, nombre: "Humanidades", select: false}
   ];
@@ -38,7 +40,11 @@ export class CursosScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this._cursos.getVideos().subscribe(datos => {
+      for (let i = 0; i < datos.length; i++) {
+        console.log(datos[i]);
+      }
+    })
   }
 
   //Al seleccionar un curso, se redirige a curso individual

@@ -13,7 +13,7 @@ exports.editVideo = exports.deleteVideo = exports.createVideo = exports.getVideo
 const database_1 = require("../../database");
 const getVideos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield database_1.pool.query('SELECT * FROM videos ORDER BY id_curso');
+        const response = yield database_1.pool.query('SELECT * FROM videos_cursos');
         return res.status(200).json(response.rows);
     }
     catch (e) {

@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CursosService } from 'src/app/servicios/cursos.service';
 import { Video_Curso } from 'src/app/interfaces/video';
