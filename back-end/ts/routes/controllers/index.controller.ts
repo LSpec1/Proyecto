@@ -57,3 +57,4 @@ export const editVideo = async (req: Request, res: Response) => {
     const response = await pool.query('UPDATE videos SET id_curso = $1, id_video_curso = $2, modulo = $3, titulo = $4, link = $5 WHERE id_curso = $1 AND id_video_curso = $2', [id_curso, id_video_curso, modulo, titulo, link]);
     res.json(`Video curso: ${id_curso}, id: ${id_video_curso} editado`)
 }
+

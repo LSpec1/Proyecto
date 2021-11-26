@@ -54,6 +54,7 @@ export class RegistrarseScreenComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   select(event:any){
     this.ciudades = State.getStatesOfCountry(event.value)
   }
@@ -72,6 +73,9 @@ export class RegistrarseScreenComponent implements OnInit {
       "telefono": this.formulario.get("telefono")?.value,
       "cv": this.formulario.get("cv")?.value
     }];
+
+    alert('Sus datos se han registrado correctamente');
+    window.location.reload()
 
   }
 

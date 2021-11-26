@@ -16,13 +16,13 @@
                 <li>
                     <label for="Email">Email</label>
                     <br>
-                    <input id="Email" type="text" name="Email" placeholder="Email" required="">
+                    <input id="correo" type="text" name="Email" placeholder="Email" required="">
                 </li>
                 <br>
                 <li>
                     <label for="password">Contraseña</label>
                     <br>
-                    <input id="password" type="password" placeholder="Contraseña" name="password" required="">
+                    <input id="clave" type="password" placeholder="Contraseña" name="password" required="">
                 </li>
                 <br>
                 <li>
@@ -34,7 +34,7 @@
                 </li>
                 <li>
                     <br>
-                    <button type="submit" title="Ingresar" [routerLink]="['/bolsa']" (click)="mandarEstate(1)" name="Ingresar">Iniciar Sesión</button>
+                    <button type="submit" title="Ingresar" (click)="mandarEstate(1)" name="Ingresar">Iniciar Sesión</button>
                 </li>
                 <br>
                 <li>
@@ -48,7 +48,7 @@
                 </li>
                 <li>
                     <br>
-                    <button id="registrate" type="button" title="Registrarse" name="registrate" [routerLink]="['register']">Registrate</button>
+                    <button id="registrate" type="button" title="Registrarse" name="registrate" [routerLink]="['/registrate']">Registrate</button>
                 </li>
                 <br>
                 <li>
