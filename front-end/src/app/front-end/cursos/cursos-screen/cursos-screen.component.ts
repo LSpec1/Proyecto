@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CursosService } from 'src/app/servicios/cursos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Video_Curso } from 'src/app/interfaces/video';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cursos-screen',
@@ -12,7 +13,7 @@ import { Video_Curso } from 'src/app/interfaces/video';
 export class CursosScreenComponent implements OnInit {
 
   //Variable que almacena lo obtenido en el servicio cursos
-  listaCursos = new Array<Video_Curso>();
+  listaVideos = new Array<Video_Curso>();
 
   //Variables de filtros
   filtroTematica: any[] = [];
@@ -35,16 +36,21 @@ export class CursosScreenComponent implements OnInit {
     {id: 3, modulos: 4, select: false}
   ];
 
-  constructor(private _cursos:CursosService, private router: Router, private routeA: ActivatedRoute) {
-    this.listaCursos = _cursos.getListaVideos();
+  constructor(private cursosService:CursosService, private router: Router, private routeA: ActivatedRoute) {
+    
   }
 
   ngOnInit(): void {
-    this._cursos.getVideos().subscribe(datos => {
+    this.cursosService.getListaVideos().subscribe(datos=>{
       for (let i = 0; i < datos.length; i++) {
-        console.log(datos[i]);
+        this.listaVideos.push(datos[i]);
       }
-    })
+    });
+    this.cursosService.listaVideos = this.listaVideos;
+    if (this.listaVideos.length == 0) {
+      let titulo = document.getElementsByClassName('titulo-cursos')[0];
+      titulo.innerHTML = "Ninguna clase encontrada"
+    }
   }
 
   //Al seleccionar un curso, se redirige a curso individual
