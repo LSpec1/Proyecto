@@ -74,6 +74,7 @@ $secundario: rgb(30, 30, 35);
 }
 .listaCursos .card{
     background-color: $primario;
+    max-height: 230px;
 }
 #carta-cuerpo {
     display: grid;

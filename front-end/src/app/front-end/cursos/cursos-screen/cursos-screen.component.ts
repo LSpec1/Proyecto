@@ -25,7 +25,7 @@ export class CursosScreenComponent implements OnInit {
 
   //Variables que almacenana los checkboxes
   tematicasCheckbox = [
-    {id: 1, nombre: "Programacion", select: false},
+    {id: 1, nombre: "Programación", select: false},
     {id: 2, nombre: "Diseño", select: false},
     {id: 3, nombre: "Humanidades", select: false}
   ];
@@ -47,7 +47,7 @@ export class CursosScreenComponent implements OnInit {
       }
     });
     this.cursosService.listaVideos = this.listaVideos;
-    if (this.listaVideos.length == 0) {
+    if (this.listaVideos == []) {
       let titulo = document.getElementsByClassName('titulo-cursos')[0];
       titulo.innerHTML = "Ninguna clase encontrada"
     }

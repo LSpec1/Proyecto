@@ -28,7 +28,7 @@
         <div class="listaCursos">
             <ng-container *ngFor="let video of listaVideos">
                 <!--Solo seleccionar los videos de id = 1 y modulo = 1, para obtener el primer video del los curso-->
-                <div *ngIf="(video.id_video_curso == 1) && filtrar()">
+                <ng-container *ngIf="(video.id_video_curso == 1) && filtrar()">
                     <div class="card {{video.curso}}" (click)=cursoSeleccionado(video.id_curso)>
                         <!--Opciones de video-->
                         <iframe
@@ -51,7 +51,7 @@
                             {{video.curso}}
                         </div>
                     </div>
-                </div>
+                </ng-container>
             </ng-container>
         </div>
     </div>
