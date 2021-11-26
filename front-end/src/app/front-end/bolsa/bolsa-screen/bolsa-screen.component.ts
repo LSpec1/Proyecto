@@ -9,12 +9,21 @@ import { BolsaService } from 'src/app/servicios/bolsa.service';
 })
 export class BolsaScreenComponent implements OnInit {
 
-  _bolsa:BolsaService = new BolsaService;
+  bolsa:any;
+  estado:boolean = false;
+  constructor(private _bolsa:BolsaService) {}
 
-  constructor() {
-
-  }
   ngOnInit(): void {
+    this.obtenerEmpleos();
+  }
+
+  obtenerEmpleos(){
+    this._bolsa.getBolsa().subscribe(datos=> {
+      this.bolsa = datos
+      this.estado= true;
+    }, error => {
+      console.log(error);
+    })
   }
 
 }

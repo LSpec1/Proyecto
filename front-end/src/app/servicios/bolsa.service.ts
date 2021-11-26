@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { empleos, empleo } from '../interfaces/bolsa';
 
 
@@ -7,15 +10,29 @@ import { empleos, empleo } from '../interfaces/bolsa';
 })
 export class BolsaService {
 
+
+
   private empleos:Array<empleo> = empleos;
 
-  constructor() {
-    this.empleos = this.sortEmpleos(empleos);
+  constructor(private http:HttpClient) {
+    //this.empleos = this.sortEmpleos(empleos);
   }
 
-  getEmpleos(){
-    return empleos;
+  getBolsa(): Observable<any>{
+    return this.http.get(`${environment.hostname}/empleo`);
   }
+
+  // getEmpleosSugeridos(id:any): Observable<any>{
+  //   return this.http.get(`${environment.hostname}/empleo/${id}`);
+  // }
+
+  getEmpleosById(id:any): Observable<any>{
+    return this.http.get(`${environment.hostname}/empleo/${id}`);
+  }
+
+  //getEmpleos(){
+  //  return empleos;
+  //}
 
   setEmpleos(empleos:Array<empleo>){
     this.empleos = empleos;

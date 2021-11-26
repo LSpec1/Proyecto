@@ -33,5 +33,28 @@ from videos as v, cursos as c
 where v.id_curso = c.id
 order by v.id_curso, v.modulo, v.id_video_curso
 
+
+
+
+drop table if exists empleos;
+create table empleos (
+	_idNoticia int,
+	titulo varchar(50),
+	empresa varchar(50),
+	pais varchar(50),
+	ciudad varchar(50),
+	imagen varchar(200),
+	fecha date,
+	descripcion varchar(500),
+	contacto varchar(20),
+	correo varchar(100),
+	isVerificada boolean,
+	salario int,
+	jornada varchar(20),
+	constraint pk_idNoticia primary key (_idNoticia)
+);
+
+--copy empleos from 'D:\bd_empleos.csv' CSV DELIMITER ',' header encoding 'utf-8';
+
 --Para importar un archivo excel.csv - COPY videos from 'C:\bd.csv' CSV delimiter ',' header encoding 'Latin1';
 --Para exportar un archivo excel.csv - COPY videos to 'C:\bd.csv' CSV delimiter ',' header encoding 'Latin1';

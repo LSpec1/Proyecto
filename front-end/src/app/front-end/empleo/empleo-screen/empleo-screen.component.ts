@@ -11,24 +11,34 @@ import { BolsaService } from 'src/app/servicios/bolsa.service';
 export class EmpleoScreenComponent implements OnInit {
 
 
-  empleo?:empleo;
+  public empleo:any;
+  public bolsa:any;
+  public wea:any;
   id:number=0;
   estado:boolean = false;
   empleoSugeridos:any
-  _bolsa:BolsaService = new BolsaService
+  aux:any;
 
-  constructor(private ruta:ActivatedRoute, private router: Router) {
-    this.ruta.params.subscribe(datos=>{
-      this.id=datos["id"]
-    })
-    this.empleoSugeridos = Object.create(empleos);
 
+  constructor(private ruta:ActivatedRoute, private router: Router, private _bolsa: BolsaService, private route: ActivatedRoute) {
+
+
+
+    //this.empleoSugeridos = Object.create(empleos);
   }
 
   ngOnInit(): void {
-    this.empleo = empleos.find(objeto=>objeto._idNoticia==this.id);
-    this.empleoSugeridos = this._bolsa.reloadEmpleos(this.empleo!);
-    this.empleoSugeridos.splice(2,this.empleoSugeridos.length);
+    this.ruta.params.subscribe(datos=>{
+      this.id=datos["id"]
+    })
+    this._bolsa.getEmpleosById(this.id).subscribe(datos=>{
+      this.empleo = datos;
+
+    })
+    console.log(this.empleo);
+    //this.empleoSugeridos = this._bolsa.reloadEmpleos(this.empleo!);
+    //this.empleoSugeridos.splice(2,this.empleoSugeridos.length);
+    //this.obtenerEmpleoById(this.id);
   }
 
 
@@ -42,5 +52,21 @@ export class EmpleoScreenComponent implements OnInit {
     })
   }
 
+  obtenerEmpleoById(id:any){
+    this._bolsa.getEmpleosById(id).subscribe(datos=>{
+      this.empleo = datos;
+    },error =>{
+      console.log(error);
+    })
+  }
 
+  obtenerEmpleos():any{
+    this._bolsa.getBolsa().subscribe(datos=> {
+      this.bolsa = datos;
+      console.log(datos);
+      this.estado= true;
+    }, error => {
+      console.log(error);
+    })
+  }
 }
