@@ -94,7 +94,7 @@ exports.getEmpleosById = getEmpleosById;
 const getEmpleosSugeridos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id_empleo = parseInt(req.params.id);
-        const response = yield database_1.pool.query('SELECT * FROM empleos WHERE _idNoticia <> $1', [id_empleo]);
+        const response = yield database_1.pool.query('SELECT * FROM empleos WHERE _idNoticia <> $1 order by fecha asc limit 2', [id_empleo]);
         return res.status(200).json(response.rows);
     }
     catch (e) {

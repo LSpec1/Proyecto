@@ -83,7 +83,7 @@ export const getEmpleosById = async (req: Request, res: Response):Promise <Respo
 export const getEmpleosSugeridos = async (req: Request, res: Response):Promise <Response> => {
     try {
         const id_empleo = parseInt(req.params.id)
-        const response = await pool.query ('SELECT * FROM empleos WHERE _idNoticia <> $1', [id_empleo])
+        const response = await pool.query ('SELECT * FROM empleos WHERE _idNoticia <> $1 order by fecha asc limit 2', [id_empleo])
         return res.status(200).json(response.rows);
     } catch(e) {
         console.log(e);

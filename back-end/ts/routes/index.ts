@@ -13,7 +13,7 @@ router.get('/videos/:id_curso/:id_video_curso', getVideoCursoById);
 //Empleos
 router.get('/empleo',getEmpleos);
 router.get('/empleo/:id',getEmpleosById);
-router.get('/empleo/sugeridos',getEmpleosSugeridos);
+router.get('/empleo/sugeridos/:id',getEmpleosSugeridos);
 
 
 router.post('/crearVideo', createVideo);

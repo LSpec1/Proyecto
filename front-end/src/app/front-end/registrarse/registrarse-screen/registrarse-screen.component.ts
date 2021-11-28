@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { City, Country, State }  from 'country-state-city';
+import { Country, State }  from 'country-state-city';
 import { ICountry } from 'country-state-city/dist/lib/interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { state } from '@angular/animations';
 
 
 

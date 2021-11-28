@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { empleo, empleos } from 'src/app/interfaces/bolsa';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { BolsaService } from 'src/app/servicios/bolsa.service';
 
 @Component({
@@ -10,37 +9,24 @@ import { BolsaService } from 'src/app/servicios/bolsa.service';
 })
 export class EmpleoScreenComponent implements OnInit {
 
-
-  public empleo:any;
-  public bolsa:any;
-  public wea:any;
-  id:number=0;
   estado:boolean = false;
-  empleoSugeridos:any
-  aux:any;
+  empleo:any;
+  empleoSugeridos:any;
+  id:number;
 
 
-  constructor(private ruta:ActivatedRoute, private router: Router, private _bolsa: BolsaService, private route: ActivatedRoute) {
+  constructor(private ruta: ActivatedRoute,
+    private router: Router,
+    private _bolsa: BolsaService){
+      this.id=0;
+      this.ruta.params.subscribe(data=>{
+        this.id = data["id"];
+      })
+    }
 
-
-
-    //this.empleoSugeridos = Object.create(empleos);
+  ngOnInit(){
+    this.cargarBolsa();
   }
-
-  ngOnInit(): void {
-    this.ruta.params.subscribe(datos=>{
-      this.id=datos["id"]
-    })
-    this._bolsa.getEmpleosById(this.id).subscribe(datos=>{
-      this.empleo = datos;
-
-    })
-    console.log(this.empleo);
-    //this.empleoSugeridos = this._bolsa.reloadEmpleos(this.empleo!);
-    //this.empleoSugeridos.splice(2,this.empleoSugeridos.length);
-    //this.obtenerEmpleoById(this.id);
-  }
-
 
   postular(){
     this.estado=true;
@@ -52,21 +38,13 @@ export class EmpleoScreenComponent implements OnInit {
     })
   }
 
-  obtenerEmpleoById(id:any){
-    this._bolsa.getEmpleosById(id).subscribe(datos=>{
-      this.empleo = datos;
-    },error =>{
-      console.log(error);
-    })
-  }
+  cargarBolsa(){
+    this._bolsa.getEmpleoSugeridos(this.id).subscribe(data=>{
+        this.empleoSugeridos = data;
+    });
 
-  obtenerEmpleos():any{
-    this._bolsa.getBolsa().subscribe(datos=> {
-      this.bolsa = datos;
-      console.log(datos);
-      this.estado= true;
-    }, error => {
-      console.log(error);
-    })
+    this._bolsa.getEmpleosById(this.id).subscribe(data=>{
+      this.empleo = data[0];
+    });
   }
 }
