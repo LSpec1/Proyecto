@@ -3,7 +3,9 @@ const router = Router();
 
 //router.get('/test', (req, res) => res.send('hello world'))
 
+
 import { createVideo, deleteVideo, getVideoCursoById, getVideos, editVideo, getEmpleos, getEmpleosById, getEmpleosSugeridos } from './controllers/index.controller'
+
 
 
 router.get('/videos', getVideos);

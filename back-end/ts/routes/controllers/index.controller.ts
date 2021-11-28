@@ -59,6 +59,7 @@ export const editVideo = async (req: Request, res: Response) => {
 }
 
 
+
 export const getEmpleos = async (req: Request, res: Response):Promise <Response> => {
     try {
         const response = await pool.query('SELECT * FROM empleos');
@@ -90,3 +91,4 @@ export const getEmpleosSugeridos = async (req: Request, res: Response):Promise <
         return res.status(500).json('Internal Server Error');
     }
 }
+
