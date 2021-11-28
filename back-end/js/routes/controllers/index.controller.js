@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.editVideo = exports.deleteVideo = exports.createVideo = exports.getVideoCursoById = exports.getVideos = void 0;
+exports.getEmpleosSugeridos = exports.getEmpleosById = exports.getEmpleos = exports.editVideo = exports.deleteVideo = exports.createVideo = exports.getVideoCursoById = exports.getVideos = void 0;
 const database_1 = require("../../database");
 const getVideos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -68,3 +68,38 @@ const editVideo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.json(`Video curso: ${id_curso}, id: ${id_video_curso} editado`);
 });
 exports.editVideo = editVideo;
+const getEmpleos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const response = yield database_1.pool.query('SELECT * FROM empleos');
+        return res.status(200).json(response.rows);
+    }
+    catch (e) {
+        console.log(e);
+        return res.status(500).json('Internal Server Error');
+    }
+});
+exports.getEmpleos = getEmpleos;
+const getEmpleosById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id_empleo = parseInt(req.params.id);
+        const response = yield database_1.pool.query('SELECT * FROM empleos WHERE _idNoticia = $1', [id_empleo]);
+        return res.status(200).json(response.rows);
+    }
+    catch (e) {
+        console.log(e);
+        return res.status(500).json('Internal Server Error');
+    }
+});
+exports.getEmpleosById = getEmpleosById;
+const getEmpleosSugeridos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id_empleo = parseInt(req.params.id);
+        const response = yield database_1.pool.query('SELECT * FROM empleos WHERE _idNoticia <> $1 order by fecha asc limit 2', [id_empleo]);
+        return res.status(200).json(response.rows);
+    }
+    catch (e) {
+        console.log(e);
+        return res.status(500).json('Internal Server Error');
+    }
+});
+exports.getEmpleosSugeridos = getEmpleosSugeridos;

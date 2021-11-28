@@ -6,6 +6,10 @@ const router = (0, express_1.Router)();
 const index_controller_1 = require("./controllers/index.controller");
 router.get('/videos', index_controller_1.getVideos);
 router.get('/videos/:id_curso/:id_video_curso', index_controller_1.getVideoCursoById);
+//Empleos
+router.get('/empleo', index_controller_1.getEmpleos);
+router.get('/empleo/:id', index_controller_1.getEmpleosById);
+router.get('/empleo/sugeridos/:id', index_controller_1.getEmpleosSugeridos);
 router.post('/crearVideo', index_controller_1.createVideo);
 router.delete('/eliminarVideo/:id_curso/:id_video_curso', index_controller_1.deleteVideo);
 router.put('/editarVideo/:id_curso/:id_video_curso', index_controller_1.editVideo);

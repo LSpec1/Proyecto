@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { empleo, empleos } from 'src/app/interfaces/bolsa';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { BolsaService } from 'src/app/servicios/bolsa.service';
 
 @Component({
@@ -10,27 +9,24 @@ import { BolsaService } from 'src/app/servicios/bolsa.service';
 })
 export class EmpleoScreenComponent implements OnInit {
 
-
-  empleo?:empleo;
-  id:number=0;
   estado:boolean = false;
-  empleoSugeridos:any
-  _bolsa:BolsaService = new BolsaService
+  empleo:any;
+  empleoSugeridos:any;
+  id:number;
 
-  constructor(private ruta:ActivatedRoute, private router: Router) {
-    this.ruta.params.subscribe(datos=>{
-      this.id=datos["id"]
-    })
-    this.empleoSugeridos = Object.create(empleos);
 
+  constructor(private ruta: ActivatedRoute,
+    private router: Router,
+    private _bolsa: BolsaService){
+      this.id=0;
+      this.ruta.params.subscribe(data=>{
+        this.id = data["id"];
+      })
+    }
+
+  ngOnInit(){
+    this.cargarBolsa();
   }
-
-  ngOnInit(): void {
-    this.empleo = empleos.find(objeto=>objeto._idNoticia==this.id);
-    this.empleoSugeridos = this._bolsa.reloadEmpleos(this.empleo!);
-    this.empleoSugeridos.splice(2,this.empleoSugeridos.length);
-  }
-
 
   postular(){
     this.estado=true;
@@ -42,5 +38,13 @@ export class EmpleoScreenComponent implements OnInit {
     })
   }
 
+  cargarBolsa(){
+    this._bolsa.getEmpleoSugeridos(this.id).subscribe(data=>{
+        this.empleoSugeridos = data;
+    });
 
+    this._bolsa.getEmpleosById(this.id).subscribe(data=>{
+      this.empleo = data[0];
+    });
+  }
 }

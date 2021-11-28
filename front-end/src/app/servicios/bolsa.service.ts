@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { empleos, empleo } from '../interfaces/bolsa';
 
 
@@ -7,28 +10,29 @@ import { empleos, empleo } from '../interfaces/bolsa';
 })
 export class BolsaService {
 
-  private empleos:Array<empleo> = empleos;
 
-  constructor() {
-    this.empleos = this.sortEmpleos(empleos);
+  private empleos = new Array<any>();
+
+  constructor(private http:HttpClient) {
   }
 
-  getEmpleos(){
-    return empleos;
+  setEmpleos(bolsa:any){
+    this.empleos = bolsa;
   }
 
-  setEmpleos(empleos:Array<empleo>){
-    this.empleos = empleos;
+  getEmpleos():any{
+    return this.empleos;
   }
 
-  sortEmpleos(empleos:Array<empleo>){
-    return this.empleos.sort((x,y) => +new Date(y.fecha) - +new Date(x.fecha));
+  getBolsa(): Observable<any>{
+    return this.http.get(`${environment.hostname}/empleo`);
   }
 
-  reloadEmpleos(empleo:empleo):Array<empleo>{
-    let aux = Object.create(empleos);
-    let index = aux.indexOf(empleo);
-    aux.splice(index,1);
-    return aux;
+  getEmpleosById(id:any): Observable<any>{
+    return this.http.get(`${environment.hostname}/empleo/${id}`);
+  }
+
+  getEmpleoSugeridos(id:any): Observable<any>{
+    return this.http.get(`${environment.hostname}/empleo/sugeridos/${id}`);
   }
 }

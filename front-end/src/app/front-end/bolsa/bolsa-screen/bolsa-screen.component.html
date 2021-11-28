@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-lg-4">
       <h1>Filtrar por:</h1>
-      <form>
+      <form [formGroup]="buscador" (ngSubmit)="requisitos()" novalidate>
         <div class="input-group mb-5">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="palabras">
           <div class="input-group-prepend">
             <button class="btn material-icons border-right border-top border-bottom">search</button>
           </div>
@@ -13,54 +13,55 @@
           <div id="wrapper-ubicacion">
             <label class="form-label">Ubicación</label>
             <div class="form-check col">
-              <input class="form-check-input" type="checkbox">
-              <label class="form-check-label">1</label>
+              <input class="form-check-input" type="checkbox" formControlName="nacional">
+              <label class="form-check-label">Nacional</label>
             </div>
             <div class="form-check col">
-              <input class="form-check-input" type="checkbox">
-              <label class="form-check-label">2</label>
+              <input class="form-check-input" type="checkbox" formControlName="internacional">
+              <label class="form-check-label">Internacional</label>
             </div>
             <div class="form-check col">
-              <input class="form-check-input" type="checkbox">
-              <label class="form-check-label">3</label>
+              <input class="form-check-input" type="checkbox" formControlName="teletrabajo">
+              <label class="form-check-label">Teletrabajo</label>
             </div>
           </div>
 
           <div id="wrapper-jornada">
             <label class="form-label mt-5">Jornada</label>
             <div class="form-check col-12">
-
-              <input class="form-check-input" type="checkbox">
+              <input class="form-check-input" type="checkbox" formControlName="tiempoCompleto">
               <label class="form-check-label">Tiempo completo</label>
             </div>
             <div class="form-check col-12">
-              <input class="form-check-input" type="checkbox">
+              <input class="form-check-input" type="checkbox" formControlName="tiempoParcial">
               <label class="form-check-label">Tiempo Parcial</label>
             </div>
             <div class="form-check col-12">
-              <input class="form-check-input" type="checkbox">
+              <input class="form-check-input" type="checkbox" formControlName="porHoras">
               <label class="form-check-label">Por horas</label>
             </div>
           </div>
           <div id="wrapper-salario" class="mt-5">
             <label for="salario" class="form-label col-12">Salario</label>
-            <input type="range" min="0" max="5000" value="0" class="form-range col-12" id="salario">
+            <input type="range" min="0" max="3000" value="0" class="col-12 form-range" id="salario" formControlName="salario">
             <div class="d-flex flex-wrap justify-content-between">
               <label class="form-label">$0</label>
               <label class="form-label">$1500</label>
               <label class="form-label">$3000</label>
             </div>
-
           </div>
         </div>
-
       </form>
-
-
     </div>
+
     <div class="col-8">
+      <div class="text-center">
+        <div class="spinner-border text-center text-primary" role="status" *ngIf="!estado">
+          <span class="sr-only">Cargando...</span>
+        </div>
+      </div>
       <div class="container-fluid">
-        <div class="media border m-5" id="media"  [routerLink]="['/empleo',empleo._idNoticia]" routerLinkActive="router-link-active" *ngFor="let empleo of _bolsa.getEmpleos()">
+        <div class="media border m-5" id="media"  [routerLink]="['/empleo',empleo._idnoticia]" routerLinkActive="router-link-active" *ngFor="let empleo of bolsa">
           <div class="media-body m-5">
             <h1>{{empleo.titulo}}</h1>
             <h3>{{empleo.empresa}} | {{empleo.pais}}, {{empleo.ciudad}}</h3>

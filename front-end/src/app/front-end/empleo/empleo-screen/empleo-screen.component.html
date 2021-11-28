@@ -1,4 +1,7 @@
-<div class="container">
+<div class="d-flex justify-content-center" [hidden] = "empleo && empleoSugeridos">
+    <span class="spinner-border" [hidden] = "empleo && empleoSugeridos"></span>
+</div>
+<div class="container" [hidden] = "!empleo && !empleoSugeridos">
   <div class="row">
     <div class="col-8 border-right">
       <div class="container border-bottom">
@@ -30,7 +33,7 @@
 
       <div class="container">
         <p class="h3 mt-5 font-weight-bold">Ofertas relacionadas</p>
-          <div class="media border bg-grey rounded mt-5" (click)="redireccionar(empleo._idNoticia)"  *ngFor="let empleo of empleoSugeridos" id="media">
+          <div class="media border bg-grey rounded mt-5" (click)="redireccionar(empleo._idnoticia)"  *ngFor="let empleo of empleoSugeridos" id="media">
             <div class="ml-3 mt-3">
               <div class="media-body">
                 <h1>{{empleo.titulo}}</h1>
@@ -38,7 +41,7 @@
                 <footer class="blockquote-footer">Hace {{empleo?.fecha | amLocale:"es" | amTimeAgo:true}}</footer>
               </div>
             </div>
-            <img class="m-5 rounded" style="width:140px; height: 125px;" src="{{empleo?.imagen}}">
+            <img class="m-5 rounded" style="width:140px; height: 125px;" src="{{empleo.imagen}}">
           </div>
       </div>
     </div>
