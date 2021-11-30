@@ -13,14 +13,12 @@ export class LoginService {
   }
 
   setLoginEstate(estate: boolean){
-    let a = new AppComponent();
-
-    //Al ejecutar esta funcion, se ejecuta la que se encuentra en app.component
-    a.setLogin();
+    console.log('set: '+estate);
     this.loginEstate = estate;
   }
 
   getLoginEstate (){
+    console.log('get: '+this.loginEstate);
     return this.loginEstate;
   }
 }

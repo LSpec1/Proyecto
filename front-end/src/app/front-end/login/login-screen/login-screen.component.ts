@@ -1,8 +1,6 @@
-import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/servicios/login.service';
-import { InicioScreenComponent } from '../../inicio/inicio-screen/inicio-screen.component';
 
 @Component({
   selector: 'app-login-screen',
@@ -11,10 +9,12 @@ import { InicioScreenComponent } from '../../inicio/inicio-screen/inicio-screen.
 })
 export class LoginScreenComponent implements OnInit {
 
-  _loginService = new LoginService;
-  loginEstate:boolean = false;
+  loginEstate:boolean;
 
-  constructor(private _router: Router) { }
+  constructor(private _router: Router, private _loginService:LoginService) {
+    this.loginEstate = false;
+    _loginService.setLoginEstate(false);
+  }
 
   onBack():void {
     this._router.navigate(['/inicio']);
@@ -25,11 +25,11 @@ export class LoginScreenComponent implements OnInit {
 
   mandarEstate(estado:number){
     if (estado == 1) {
+      this.loginEstate = true;
       this._loginService.setLoginEstate(true);
     } else {
       this._loginService.setLoginEstate(false);
     }
-    console.log(this._loginService.getLoginEstate());
 
     var correologin="usuariocomun@correo.com";
     var clavelogin="usuariocomun"

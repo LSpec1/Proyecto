@@ -14,10 +14,12 @@ import { LoginService } from './servicios/login.service';
 export class AppComponent {
   title = 'proyecto';
   loginEstate:boolean;
-  _loginService = new LoginService();
 
-  constructor() {
-    this.loginEstate = this._loginService.getLoginEstate();
+  constructor(private _loginService: LoginService) {
+    this.loginEstate = _loginService.getLoginEstate();
+    setInterval(()=> {
+      this.loginEstate = _loginService.getLoginEstate();
+    },1 * 1000);
   }
 
   // Ejecutar esta funcion para obtener el estado de login en el servicio LoginService

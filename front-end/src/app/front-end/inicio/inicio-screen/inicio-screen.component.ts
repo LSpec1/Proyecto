@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio-screen',
@@ -8,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class InicioScreenComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: Router) {
     let color_cuerpo_primario = "rgb(201, 201, 201)"
+    
   }
 
   ngOnInit(): void {
   }
+
+
 
 }
