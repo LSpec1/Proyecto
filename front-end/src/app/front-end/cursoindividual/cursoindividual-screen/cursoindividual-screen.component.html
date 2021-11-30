@@ -4,10 +4,10 @@
         <h1 class="titulo">Curso de {{videoSeleccionado.curso}}</h1>
         <div class="navegacion">
             <ng-container *ngFor="let video of videosCurso; index as i">
-                <div *ngIf="video != videoSeleccionado" (click)="siguienteVideo(video.id_video_curso, video.modulo)">
+                <div *ngIf="video != videoSeleccionado" (click)="siguienteVideo(video.id_video_curso, video.modulo, video.id_video_curso)">
                     <div class="nodo"></div>
                 </div>
-                <div *ngIf="video == videoSeleccionado" (click)="siguienteVideo(video.id_video_curso, video.modulo)">
+                <div *ngIf="video == videoSeleccionado" (click)="siguienteVideo(video.id_video_curso, video.modulo, video.id_video_curso)">
                     <div class="seleccionado"></div>
                 </div>
                 <div *ngIf="!esUltimoVideo(video, i)">
