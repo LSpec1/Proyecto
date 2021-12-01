@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center" [hidden] = "empleo && empleoSugeridos">
+<div class="d-flex justify-content-center" [hidden] = "empleo || empleoSugeridos">
     <span class="spinner-border" [hidden] = "empleo && empleoSugeridos"></span>
 </div>
 <div class="container" [hidden] = "!empleo && !empleoSugeridos">

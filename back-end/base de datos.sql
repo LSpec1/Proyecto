@@ -38,7 +38,7 @@ order by v.id_curso, v.modulo, v.id_video_curso
 
 drop table if exists empleos;
 create table empleos (
-	_idNoticia int,
+	_idNoticia serial,
 	titulo varchar(50),
 	empresa varchar(50),
 	pais varchar(50),

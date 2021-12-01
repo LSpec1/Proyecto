@@ -10,6 +10,7 @@ import { CursoindividualScreenComponent } from './front-end/cursoindividual/curs
 import { EmpleoScreenComponent } from './front-end/empleo/empleo-screen/empleo-screen.component';
 import { SegundologinScreenComponent } from './front-end/segundologin-screen/segundologin-screen.component';
 import { CursonuevoScreenComponent } from './front-end/cursonuevo-screen/cursonuevo-screen.component';
+import { CrearEmpleoComponent } from './front-end/crear-empleo/crear-empleo.component';
 const routes: Routes = [
   { path: '', component: LoginScreenComponent},
   { path: 'inicio', component: InicioScreenComponent},
@@ -23,8 +24,9 @@ const routes: Routes = [
   { path: 'login2', component: SegundologinScreenComponent},
   { path: 'login', component: LoginScreenComponent},
   {path: 'cursonuevo', component: CursonuevoScreenComponent},
-  {path: 'registrate', component:RegistrarseScreenComponent}
- 
+  {path: 'registrate', component:RegistrarseScreenComponent},
+  { path: 'crearEmpleo', component: CrearEmpleoComponent}
+
 ];
 
 @NgModule({

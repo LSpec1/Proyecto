@@ -137,5 +137,20 @@ export class BolsaScreenComponent implements OnInit {
 
     this.bolsa = filtro;
   }
+
+
+  borrarEmpleo(id:string){
+    this._bolsa.deleteEmpleo(id).subscribe(data =>{
+      console.log(data);
+      this.obtenerEmpleos();
+    }, error=> {
+      console.log(error);
+    })
+
+  }
+
+  crearEmpleo(){
+    this.router.navigate(['/crearEmpleo']);
+  }
 }
 

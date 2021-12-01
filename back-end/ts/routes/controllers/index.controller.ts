@@ -1,4 +1,4 @@
-import { request, Request, Response} from 'express';
+import { json, request, Request, Response} from 'express';
 import { QueryResult } from 'pg';
 import { pool } from '../../database'
 
@@ -73,7 +73,7 @@ export const getEmpleos = async (req: Request, res: Response):Promise <Response>
 export const getEmpleosById = async (req: Request, res: Response):Promise <Response> => {
     try {
         const id_empleo = parseInt(req.params.id)
-        const response = await pool.query ('SELECT * FROM empleos WHERE _idNoticia = $1', [id_empleo])
+        const response = await pool.query ('SELECT * FROM empleos WHERE _idempleo = $1', [id_empleo])
         return res.status(200).json(response.rows);
     } catch(e) {
         console.log(e);
@@ -84,7 +84,7 @@ export const getEmpleosById = async (req: Request, res: Response):Promise <Respo
 export const getEmpleosSugeridos = async (req: Request, res: Response):Promise <Response> => {
     try {
         const id_empleo = parseInt(req.params.id)
-        const response = await pool.query ('SELECT * FROM empleos WHERE _idNoticia <> $1 order by fecha asc limit 2', [id_empleo])
+        const response = await pool.query ('SELECT * FROM empleos WHERE _idempleo <> $1 order by fecha asc limit 2', [id_empleo])
         return res.status(200).json(response.rows);
     } catch(e) {
         console.log(e);
@@ -92,3 +92,24 @@ export const getEmpleosSugeridos = async (req: Request, res: Response):Promise <
     }
 }
 
+export const deleteEmpleo = async (req: Request, res: Response) => {
+    try {
+        const id_empleo = parseInt(req.params.id_empleo);
+        const response = await pool.query('DELETE FROM empleos where _idempleo = $1', [id_empleo]);
+        res.json(`Video curso con id: ${id_empleo} fue eliminado`);
+    }catch (e){
+        console.log(e);
+    }
+}
+
+export const insertarEmpleo = async (req: Request, res: Response) =>{
+    try {
+        const { titulo , empresa, pais, ciudad, fecha, descripcion, contacto, correo, salario, jornada} = req.body;
+        const response = await pool.query ("INSERT INTO empleos (titulo,empresa,pais,ciudad,fecha,descripcion,contacto,correo,salario,jornada) values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)", [titulo,empresa,pais,ciudad,fecha,descripcion,contacto,correo,salario,jornada])
+        return res.json({
+            message: 'Empleo creado',
+        });
+    }catch (e){
+        console.log(e);
+    }
+}

@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <h1>Formulario para ingresar oferta laboral:</h1>
+  <h5>Todos los campos son requeridos*</h5>
+  <div class="row">
+  <form [formGroup]="formulario" (ngSubmit)="insertar()" novalidate>
+
+    <li>
+      <label class="form-check-label">Titulo</label>
+      <input class="form-control" type="text" formControlName="titulo">
+    </li>
+
+    <li>
+      <label class="form-check-label">Empresa</label>
+      <input class="form-control" type="text" formControlName="empresa">
+    </li>
+
+    <li>
+      <label class="form-check-label">Pais</label>
+      <select class="custom-select"  formControlName="pais" placeholder="Paises..." (change)="select($event.target)">
+        <option *ngFor="let pais of paises" value="{{pais.isoCode}}">{{pais.name}}</option>
+      </select>
+    </li>
+
+    <li>
+      <label class="form-check-label">Ciudad</label>
+      <select class="custom-select" formControlName="ciudad" placeholder="Ciudades...">
+        <option *ngFor="let ciudad of ciudades">{{ciudad.name}}</option>
+      </select>
+    </li>
+
+    <li>
+      <label class="form-check-label">Descripcion</label>
+      <input class="form-control" type="text" formControlName="descripcion">
+    </li>
+
+    <li>
+      <label class="form-check-label">Contacto</label>
+      <input class="form-control" type="text" formControlName="contacto">
+    </li>
+
+    <li>
+      <label class="form-check-label">Correo</label>
+      <input class="form-control" type="text" formControlName="correo">
+    </li>
+
+    <li>
+      <label class="form-check-label">Salario</label>
+      <input class="form-control" type="text" formControlName="salario">
+    </li>
+
+    <li>
+      <label class="form-check-label">Jornada</label>
+      <select class="form-select" formControlName="jornada">
+        <option value="Part time">Part time</option>
+        <option value="Full time">Full time</option>
+      </select>
+    </li>
+    <button type="submit" class="btn btn-success"  [disabled] = "!formulario.valid" (click)="enviar()">Enviar</button>
+  </form>
+</div>
+</div>

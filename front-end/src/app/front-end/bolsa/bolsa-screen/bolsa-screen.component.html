@@ -1,6 +1,9 @@
+
 <div class="container">
   <div class="row">
+
     <div class="col-lg-4">
+
       <h1>Filtrar por:</h1>
       <form [formGroup]="buscador" (ngSubmit)="requisitos()" novalidate>
         <div class="input-group mb-5">
@@ -52,22 +55,25 @@
           </div>
         </div>
       </form>
+      <span class="btn btn-success mt-5" (click)="crearEmpleo()">Crear nueva oferta laboral</span>
     </div>
 
     <div class="col-8">
       <div class="text-center">
         <div class="spinner-border text-center text-primary" role="status" *ngIf="!estado">
-          <span class="sr-only">Cargando...</span>
         </div>
       </div>
       <div class="container-fluid">
-        <div class="media border m-5" id="media"  [routerLink]="['/empleo',empleo._idnoticia]" routerLinkActive="router-link-active" *ngFor="let empleo of bolsa">
-          <div class="media-body m-5">
-            <h1>{{empleo.titulo}}</h1>
-            <h3>{{empleo.empresa}} | {{empleo.pais}}, {{empleo.ciudad}}</h3>
-            <footer class="blockquote-footer">Hace {{empleo.fecha | amLocale:"es" | amTimeAgo:true}}</footer>
+        <div class="media border m-5" id="media"   *ngFor="let empleo of bolsa">
+          <div class="container-fluid" [routerLink]="['/empleo',empleo._idempleo]" routerLinkActive="router-link-active">
+            <div class="media-body m-5" >
+              <h1>{{empleo.titulo}}</h1>
+              <h3>{{empleo.empresa}} | {{empleo.pais}}, {{empleo.ciudad}}</h3>
+              <footer class="blockquote-footer">Hace {{empleo.fecha | amLocale:"es" | amTimeAgo:true}}</footer>
+            </div>
+            <img class="m-5 rounded align-self-center" style="width:140px; height: 125px;" src="{{empleo.imagen}}">
           </div>
-          <img class="m-5 rounded align-self-center" style="width:140px; height: 125px;" src="{{empleo.imagen}}">
+          <span class="material-icons text-white btn btn-danger" (click)="borrarEmpleo(empleo._idempleo)">close</span>
         </div>
       </div>
     </div>

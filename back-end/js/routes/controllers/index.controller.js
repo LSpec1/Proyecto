@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getEmpleosSugeridos = exports.getEmpleosById = exports.getEmpleos = exports.editVideo = exports.deleteVideo = exports.createVideo = exports.getVideoCursoById = exports.getVideos = void 0;
+exports.insertarEmpleo = exports.deleteEmpleo = exports.getEmpleosSugeridos = exports.getEmpleosById = exports.getEmpleos = exports.editVideo = exports.deleteVideo = exports.createVideo = exports.getVideoCursoById = exports.getVideos = void 0;
 const database_1 = require("../../database");
 const getVideos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -82,7 +82,7 @@ exports.getEmpleos = getEmpleos;
 const getEmpleosById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id_empleo = parseInt(req.params.id);
-        const response = yield database_1.pool.query('SELECT * FROM empleos WHERE _idNoticia = $1', [id_empleo]);
+        const response = yield database_1.pool.query('SELECT * FROM empleos WHERE _idempleo = $1', [id_empleo]);
         return res.status(200).json(response.rows);
     }
     catch (e) {
@@ -94,7 +94,7 @@ exports.getEmpleosById = getEmpleosById;
 const getEmpleosSugeridos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id_empleo = parseInt(req.params.id);
-        const response = yield database_1.pool.query('SELECT * FROM empleos WHERE _idNoticia <> $1 order by fecha asc limit 2', [id_empleo]);
+        const response = yield database_1.pool.query('SELECT * FROM empleos WHERE _idempleo <> $1 order by fecha asc limit 2', [id_empleo]);
         return res.status(200).json(response.rows);
     }
     catch (e) {
@@ -103,3 +103,27 @@ const getEmpleosSugeridos = (req, res) => __awaiter(void 0, void 0, void 0, func
     }
 });
 exports.getEmpleosSugeridos = getEmpleosSugeridos;
+const deleteEmpleo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id_empleo = parseInt(req.params.id_empleo);
+        const response = yield database_1.pool.query('DELETE FROM empleos where _idempleo = $1', [id_empleo]);
+        res.json(`Video curso con id: ${id_empleo} fue eliminado`);
+    }
+    catch (e) {
+        console.log(e);
+    }
+});
+exports.deleteEmpleo = deleteEmpleo;
+const insertarEmpleo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { titulo, empresa, pais, ciudad, fecha, descripcion, contacto, correo, salario, jornada } = req.body;
+        const response = yield database_1.pool.query("INSERT INTO empleos (titulo,empresa,pais,ciudad,fecha,descripcion,contacto,correo,salario,jornada) values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)", [titulo, empresa, pais, ciudad, fecha, descripcion, contacto, correo, salario, jornada]);
+        return res.json({
+            message: 'Empleo creado',
+        });
+    }
+    catch (e) {
+        console.log(e);
+    }
+});
+exports.insertarEmpleo = insertarEmpleo;

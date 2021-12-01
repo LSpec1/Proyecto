@@ -30,7 +30,8 @@ import { BolsaService } from './servicios/bolsa.service';
 //Modulos externos
 import { MomentModule } from 'ngx-moment';
 import { FormsModule } from '@angular/forms'; //permite [(ngModule)] para input html -> typescript
-import { HttpClientModule } from '@angular/common/http'; //Permite el traspaso de back-end -> Front-end
+import { HttpClientModule } from '@angular/common/http';
+import { CrearEmpleoComponent } from './front-end/crear-empleo/crear-empleo.component'; //Permite el traspaso de back-end -> Front-end
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { HttpClientModule } from '@angular/common/http'; //Permite el traspaso d
     OfertasComponent,
     InfoComponent,
     SegundologinScreenComponent,
-    CursonuevoScreenComponent
+    CursonuevoScreenComponent,
+    CrearEmpleoComponent
   ],
   imports: [
     BrowserModule,
