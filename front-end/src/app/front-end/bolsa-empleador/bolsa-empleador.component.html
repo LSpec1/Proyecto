@@ -1,9 +1,6 @@
-
 <div class="container">
   <div class="row">
-
     <div class="col-lg-4">
-
       <h1>Filtrar por:</h1>
       <form [formGroup]="buscador" (ngSubmit)="requisitos()" novalidate>
         <div class="input-group mb-5">
@@ -55,7 +52,7 @@
           </div>
         </div>
       </form>
-
+      <span class="btn btn-success mt-5" (click)="crearEmpleo()">Crear nueva oferta laboral</span>
     </div>
 
     <div class="col-8">
@@ -73,7 +70,7 @@
             </div>
             <img class="m-5 rounded align-self-center" style="width:140px; height: 125px;" src="{{empleo.imagen}}">
           </div>
-
+          <span class="material-icons text-white btn btn-danger" (click)="borrarEmpleo(empleo._idempleo)">close</span>
         </div>
       </div>
     </div>

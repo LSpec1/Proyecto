@@ -107,7 +107,7 @@ const deleteEmpleo = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     try {
         const id_empleo = parseInt(req.params.id_empleo);
         const response = yield database_1.pool.query('DELETE FROM empleos where _idempleo = $1', [id_empleo]);
-        res.json(`Video curso con id: ${id_empleo} fue eliminado`);
+        res.json(`Empleo con id: ${id_empleo} fue eliminado`);
     }
     catch (e) {
         console.log(e);

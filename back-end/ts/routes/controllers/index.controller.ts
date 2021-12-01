@@ -96,7 +96,7 @@ export const deleteEmpleo = async (req: Request, res: Response) => {
     try {
         const id_empleo = parseInt(req.params.id_empleo);
         const response = await pool.query('DELETE FROM empleos where _idempleo = $1', [id_empleo]);
-        res.json(`Video curso con id: ${id_empleo} fue eliminado`);
+        res.json(`Empleo con id: ${id_empleo} fue eliminado`);
     }catch (e){
         console.log(e);
     }

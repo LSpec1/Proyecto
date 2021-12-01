@@ -79,7 +79,7 @@ export class CrearEmpleoComponent implements OnInit {
     datos["pais"] = this.nombreCiudad;
     this._bolsa.createEmpleo(datos).subscribe(data=>{
       alert(data.message);
-      this.router.navigate(['/bolsa']).then(()=>{
+      this.router.navigate(['/bolsaEmpleador']).then(()=>{
         window.location.reload();
       })
     });

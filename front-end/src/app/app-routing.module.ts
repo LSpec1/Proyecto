@@ -11,6 +11,7 @@ import { EmpleoScreenComponent } from './front-end/empleo/empleo-screen/empleo-s
 import { SegundologinScreenComponent } from './front-end/segundologin-screen/segundologin-screen.component';
 import { CursonuevoScreenComponent } from './front-end/cursonuevo-screen/cursonuevo-screen.component';
 import { CrearEmpleoComponent } from './front-end/crear-empleo/crear-empleo.component';
+import { BolsaEmpleadorComponent } from './front-end/bolsa-empleador/bolsa-empleador.component';
 const routes: Routes = [
   { path: '', component: LoginScreenComponent},
   { path: 'inicio', component: InicioScreenComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'login', component: LoginScreenComponent},
   {path: 'cursonuevo', component: CursonuevoScreenComponent},
   {path: 'registrate', component:RegistrarseScreenComponent},
-  { path: 'crearEmpleo', component: CrearEmpleoComponent}
+  { path: 'crearEmpleo', component: CrearEmpleoComponent},
+  { path: 'bolsaEmpleador',component: BolsaEmpleadorComponent}
 
 ];
 

@@ -47,7 +47,7 @@ export class SegundologinScreenComponent implements OnInit {
 
     if((correo==correologinempresa && clave == claveempresa) || (correoprofesional==correologinprofesional && claveprof == claveprofesional)){
       alert("Bienvenido a la plataforma!");
-      this._router.navigate(['/bolsa'])
+      this._router.navigate(['/bolsaEmpleador'])
     }
     else{
       alert("Porfavor verifique sus datos");
