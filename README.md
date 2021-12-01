@@ -18,6 +18,8 @@ Navegación de la página
 login para usuario común : usuariocomun@correo.com - pass:usuariocomun
 login para usuario empresa (Login empresa-profesional):empresa@correo.com - pass:empresa
 login para usuario profesional (login empresa-profesional):profesional@correo.com - pass:profesional
+
+# En la aplicación
 Una ves dentro reiniciar la página de inicio para evitar errores
 En la sección cursos se puede acceder a cada uno de ellos clickeando en sus tarjetas, el video de muestra corresponde al primer video de la clase (clase 1, modulo 1).
 En la sección bolsa se puede acceder al contenido de cada oferta laboral de la misma forma que en cursos.
